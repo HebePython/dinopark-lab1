@@ -1,0 +1,5 @@
+/pdfs/
+/webpages/**/*.js
+/webpages/**/*.html
+/webpages/**/*.css
+__pycache__/
