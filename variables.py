@@ -5,5 +5,8 @@ current_directory = os.getcwd().replace('\\', '/')
 #browser
 browser = "chrome"
 
-# URLS
+# URL
 url = f"file:///{current_directory}/webpages/jurap.html"
+
+# Title of Page
+title = "Jura-Stina-Kalle Park"
