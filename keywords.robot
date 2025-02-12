@@ -8,3 +8,4 @@ Open Browser To Page
     Open Browser    ${url}    ${browser}
     Maximize Browser Window
     Title Should Be    ${title}
+    Sleep    5s
