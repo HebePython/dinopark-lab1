@@ -10,3 +10,9 @@ Test Teardown    Close Browser
 Test Open Page
     Open Browser To Page    ${url}    ${browser}    ${title}
     
+
+
+
+Valid Login Test
+    Open Browser To Login Page    ${url}    ${browser}    ${title}    ${login_header_button}
+    Valid Login    ${valid_username}    ${valid_password}    ${username_element}    ${password_element}    ${login_button}
