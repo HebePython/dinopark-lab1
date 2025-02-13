@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2 (Python 3.13.1 on win32)" generated="2025-02-13T18:41:44.425191" rpa="false" schemaversion="5">
+<suite id="s1" name="Dinopark-Lab1" source="C:\Mjukvarutestare Utbildning\Testautomation för Continuous Testing\dinopark-lab1\dinopark-lab1">
+<suite id="s1-s1" name="Main" source="C:\Mjukvarutestare Utbildning\Testautomation för Continuous Testing\dinopark-lab1\dinopark-lab1\main.robot">
+<test id="s1-s1-t1" name="Valid User Registration Test" line="13">
+<kw name="Open Browser To Page" owner="keywords">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-02-13T18:41:44.656411" level="INFO">Opening browser 'chrome' to base url 'file:///C:/Mjukvarutestare Utbildning/Testautomation för Continuous Testing/dinopark-lab1/dinopark-lab1/webpages/jurap.html'.</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-02-13T18:41:44.656120" elapsed="1.651020"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-02-13T18:41:46.307406" elapsed="0.028310"/>
+</kw>
+<kw name="Title Should Be" owner="SeleniumLibrary">
+<msg time="2025-02-13T18:41:46.343675" level="INFO">Page title is 'Jura-Stina-Kalle Park'.</msg>
+<arg>${title}</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<status status="PASS" start="2025-02-13T18:41:46.336045" elapsed="0.007927"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-02-13T18:41:51.345248" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-02-13T18:41:46.344165" elapsed="5.002250"/>
+</kw>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<arg>${title}</arg>
+<status status="PASS" start="2025-02-13T18:41:44.655393" elapsed="6.691418"/>
+</kw>
+<kw name="Click Navigation Element" owner="keywords">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-13T18:41:51.350429" level="INFO">Clicking element '//*[@id="register-nav"]'.</msg>
+<arg>${Element_to_click}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-13T18:41:51.349493" elapsed="0.056151"/>
+</kw>
+<arg>${register_navigation_Element}</arg>
+<tag>Sjubaib</tag>
+<status status="PASS" start="2025-02-13T18:41:51.348097" elapsed="0.057712"/>
+</kw>
+<kw name="Type In Element" owner="keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-02-13T18:41:51.406901" level="INFO">Typing text 'test' into text field 'id=reg-username'.</msg>
+<arg>${id_element}</arg>
+<arg>${text_to_write}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-13T18:41:51.406660" elapsed="0.075624"/>
+</kw>
+<arg>${username_input_id}</arg>
+<arg>${new_user_username}</arg>
+<tag>Sjubaib</tag>
+<status status="PASS" start="2025-02-13T18:41:51.406223" elapsed="0.076203"/>
+</kw>
+<kw name="Type In Element" owner="keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-02-13T18:41:51.483825" level="INFO">Typing text '12345678' into text field 'id=reg-password'.</msg>
+<arg>${id_element}</arg>
+<arg>${text_to_write}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-13T18:41:51.483305" elapsed="0.069452"/>
+</kw>
+<arg>${password_input_id}</arg>
+<arg>${new_user_password}</arg>
+<tag>Sjubaib</tag>
+<status status="PASS" start="2025-02-13T18:41:51.482813" elapsed="0.070144"/>
+</kw>
+<kw name="Click Submit Button" owner="keywords">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-02-13T18:41:51.554080" level="INFO">Clicking button '//*[@id="register-form"]/button'.</msg>
+<arg>${Submit_Button_to_click}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-13T18:41:51.553853" elapsed="0.055579"/>
+</kw>
+<arg>${register_button}</arg>
+<tag>Sjubaib</tag>
+<status status="PASS" start="2025-02-13T18:41:51.553423" elapsed="0.056235"/>
+</kw>
+<kw name="Message visibility and validation" owner="keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${message_Element}</arg>
+<arg>${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-02-13T18:41:51.610353" elapsed="0.043659"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-02-13T18:41:51.654545" level="INFO">Verifying element 'id=register-message' contains exact text 'Registration successful! Redirecting to login...'.</msg>
+<arg>${message_Element}</arg>
+<arg>${messageText}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-02-13T18:41:51.654205" elapsed="0.014057"/>
+</kw>
+<arg>${register_message}</arg>
+<arg>${registration_success_message}</arg>
+<arg>10</arg>
+<tag>Sjubaib</tag>
+<status status="PASS" start="2025-02-13T18:41:51.609986" elapsed="0.058509"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-02-13T18:41:51.668971" elapsed="2.251173"/>
+</kw>
+<status status="PASS" start="2025-02-13T18:41:44.654448" elapsed="9.266032"/>
+</test>
+<doc>Robot lab 1, Grupp 1.     Abdirahman Bayle, Sjubaib Rifai, Henrik Bergman</doc>
+<status status="PASS" start="2025-02-13T18:41:44.442812" elapsed="9.479263"/>
+</suite>
+<status status="PASS" start="2025-02-13T18:41:44.428302" elapsed="9.495314"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Dinopark-Lab1" id="s1" pass="1" fail="0" skip="0">Dinopark-Lab1</stat>
+<stat name="Main" id="s1-s1" pass="1" fail="0" skip="0">Dinopark-Lab1.Main</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

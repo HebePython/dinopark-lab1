@@ -10,3 +10,35 @@ url = f"file:///{current_directory}/webpages/jurap.html"
 
 # Title of Page
 title = "Jura-Stina-Kalle Park"
+
+# Registration navigation element
+register_navigation_Element = '//*[@id="register-nav"]'
+
+# User-registration page Elements
+username_input_id = "id=reg-username"
+password_input_id = "id=reg-password"
+register_button = '//*[@id="register-form"]/button'
+
+register_message = "id=register-message"
+
+# Valid user credentials for registration
+new_user_username = "test"
+new_user_password = "12345678"
+
+registration_success_message = "Registration successful! Redirecting to login..."
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
