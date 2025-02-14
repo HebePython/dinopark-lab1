@@ -11,6 +11,7 @@ url = f"file:///{current_directory}/webpages/jurap.html"
 # Title of Page
 title = "Jura-Stina-Kalle Park"
 
+#region Login page elements
 
 #valid user & password
 
@@ -31,3 +32,5 @@ home_page_section = "id=home-section"
 
 # Header elements
 login_header_button = "xpath=//a[@data-section='login-section']"
+
+#endregion

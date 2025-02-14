@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation    Robot lab 1, keywords
+Documentation    Robot lab 1, Login function
 Library    SeleniumLibrary
 
 *** Keywords ***

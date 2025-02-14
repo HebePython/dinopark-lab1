@@ -9,5 +9,6 @@ Test Teardown    Close Browser
 
 *** Test Cases ***
 Valid Login Test
+    [Tags]    Henrik Bergman
     Open Browser To Login Page    ${url}    ${browser}    ${title}    ${login_header_button}
     Valid Login    ${valid_username}    ${valid_password}    ${username_element}    ${password_element}    ${login_button}
