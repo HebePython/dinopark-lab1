@@ -25,17 +25,14 @@ register_message = "id=register-message"
 new_user_username = "test1"
 new_user_password = "123123123"
 
+# Empty registration fields  
+empty_username = " "  
+empty_password = " " 
+
 # Registration status messages
 registration_success_message = "Registration successful! Redirecting to login..."
 error_existing_user_message = "Username already exists. Please choose another."
-
-
-
-
-
-
-
-
+error_empty_fields_message = "Please enter both a username and password."
 
 
 
