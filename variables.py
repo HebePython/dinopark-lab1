@@ -34,3 +34,15 @@ home_page_section = "id=home-section"
 login_header_button = "xpath=//a[@data-section='login-section']"
 
 #endregion
+
+#region Safari Booking & Calender elements
+
+# Calender elements
+date_user_input = ""
+
+date_input_element = "id=safari-date"
+
+
+
+#endregion
+
