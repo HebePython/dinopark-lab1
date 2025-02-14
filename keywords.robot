@@ -8,3 +8,11 @@ Open Browser To Page
     Open Browser    ${url}    ${browser}
     Maximize Browser Window
     Title Should Be    ${title}
+
+Navigate TO Buy Tickets Page
+    [Arguments]    ${buy_tickets}    ${tickets_page}    
+    Click Link     ${buy_tickets}
+    Wait Until Page Contains Element   ${tickets_page}    timeout= 5s
+    
+
+
