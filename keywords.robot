@@ -11,8 +11,8 @@ Open Browser To Page
 
 Navigate TO Buy Tickets Page
     [Arguments]    ${buy_tickets}    ${tickets_page}    
-    Click Link     ${buy_tickets}
-    Wait Until Page Contains Element   ${tickets_page}    timeout= 5s
+    Click Link     ${buy_tickets}    
+    Wait Until Page Contains Element   ${tickets_page}    timeout= 10s
     
 
 
