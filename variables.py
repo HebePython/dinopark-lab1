@@ -6,15 +6,16 @@ current_directory = os.getcwd().replace('\\', '/')
 browser = "chrome"
 
 # URLS
+url = f"file:///{current_directory}/new_website/jurap.html"
+
 
 title = "Jura-Stina-Kalle Park"
 
 
-url = f"file:///{current_directory}/webpages/jurap.html"
 
 tickets_page = "id=ticket-form"
 
-buy_tickets = "data-section=tickets-section"
+buy_tickets = "Buy Tickets"
 
 
 
