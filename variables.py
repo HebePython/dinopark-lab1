@@ -22,10 +22,14 @@ register_button = '//*[@id="register-form"]/button'
 register_message = "id=register-message"
 
 # Valid user credentials for registration
-new_user_username = "test"
-new_user_password = "12345678"
+new_user_username = "test1"
+new_user_password = "123123123"
 
+# Registration status messages
 registration_success_message = "Registration successful! Redirecting to login..."
+error_existing_user_message = "Username already exists. Please choose another."
+
+
 
 
 
