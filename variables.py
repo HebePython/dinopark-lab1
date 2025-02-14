@@ -1,5 +1,5 @@
 import os
-
+from date_check import get_weekday, get_weekend
 current_directory = os.getcwd().replace('\\', '/')
 
 #browser
@@ -38,9 +38,17 @@ login_header_button = "xpath=//a[@data-section='login-section']"
 #region Safari Booking & Calender elements
 
 # Calender elements
-date_user_input = ""
+weekday_user_input = get_weekday()
 
 date_input_element = "id=safari-date"
+
+weekend_user_input = get_weekend()
+
+
+# Safari page elements
+safari_page_section = "id=safari-section"
+
+safari_header_link = 'xpath=//*[@id="safari-nav"]/a'
 
 
 
