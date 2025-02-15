@@ -12,12 +12,51 @@ Test Teardown    Close Browser
 # ------------------------
 # Registration And Login Tests
 # ------------------------
+Test Valid User Registration
+   [Tags]   Sjubaib
+   Open Browser To Page   ${url}  ${browser}   ${title}
+   Click Navigation Element   ${register_navigation_Element}
+   Type In Element   ${username_input_id}   ${valid_username}
+   Type In Element   ${password_input_id}   ${valid_password}
+   Click Submit Button   ${register_button}
+   Message visibility and validation   ${register_message}   ${registration_success_message}   10  
+
+Test Register With Existing Username
+   [Tags]   Sjubaib
+   Open Browser To Page   ${url}  ${browser}   ${title}
+   Click Navigation Element   ${register_navigation_Element}
+   Type In Element   ${username_input_id}   ${valid_username}
+   Type In Element   ${password_input_id}   ${valid_password}
+   Click Submit Button   ${register_button}
+   
+   Click Navigation Element   ${register_navigation_Element}
+   Type In Element   ${username_input_id}   ${valid_username}
+   Type In Element   ${password_input_id}   ${valid_password}
+   Click Submit Button   ${register_button}
+   Message visibility and validation    ${register_message}   ${error_existing_user_message}   10
+
+Test Registration With Empty Fields
+   [Tags]   Sjubaib
+   Open Browser To Page   ${url}  ${browser}   ${title}
+   Click Navigation Element   ${register_navigation_Element}
+   Type In Element   ${username_input_id}   ${empty_username}
+   Type In Element   ${password_input_id}   ${empty_password}
+   Click Submit Button   ${register_button}
+   Message visibility and validation    ${register_message}    ${error_empty_fields_message}   10
+
+Test Registration With Too Short Password
+   [Tags]   Sjubaib
+   Open Browser To Page   ${url}  ${browser}   ${title}
+   Click Navigation Element   ${register_navigation_Element}
+   Type In Element   ${username_input_id}   ${short_password_username}
+   Type In Element   ${password_input_id}   ${short_password}
+   Click Submit Button   ${register_button}
+   Message visibility and validation    ${register_message}    ${error_short_password_message}   10
+   
 Valid Login Test
     [Tags]    Henrik Bergman
     Open Browser To Login Page    ${url}    ${browser}    ${title}    ${login_header_button}
     Valid Login    ${valid_username}    ${valid_password}    ${username_element}    ${password_element}    ${login_button}
-
-
 
 # ------------------------
 # Safari Booking Tests
@@ -40,3 +79,4 @@ Book T-Rex Rumble Safari Weekday
     And T-Rex Rumble Safari Is Selected
     Then Add Safari To Cart
     And Checkout
+
