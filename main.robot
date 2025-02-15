@@ -24,7 +24,12 @@ Test Register With Existing Username
    Type In Element   ${username_input_id}   ${new_user_username}
    Type In Element   ${password_input_id}   ${new_user_password}
    Click Submit Button   ${register_button}
-   Message visibility and validation    ${register_message}    ${error_existing_user_message}   10
+   
+   Click Navigation Element   ${register_navigation_Element}
+   Type In Element   ${username_input_id}   ${new_user_username}
+   Type In Element   ${password_input_id}   ${new_user_password}
+   Click Submit Button   ${register_button}
+   Message visibility and validation    ${register_message}   ${error_existing_user_message}   10
 
 Test Registration With Empty Fields
    [Tags]   Sjubaib
