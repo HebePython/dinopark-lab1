@@ -51,6 +51,8 @@ login_button = "xpath=//button[text()='Login']"
 
 login_message = "id=login-message"
 
+login_section = "id=login-section"
+
 # Main Page elements
 home_page_section = "id=home-section"
 

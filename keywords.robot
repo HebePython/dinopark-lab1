@@ -10,7 +10,7 @@ Resource    login_function.robot
 Open Browser To Page
     [Tags]    Henrik Bergman
     [Arguments]    ${url}    ${browser}    ${title}
-    Open Browser    ${url}    ${browser}
+    Open Browser    ${url}    ${browser}    options=add_argument("--incognito")
     Maximize Browser Window
     Title Should Be    ${title}
     Sleep    3s
@@ -33,7 +33,7 @@ Message visibility and validation
    [Tags]   Sjubaib
    [Arguments]    ${message_Element}    ${messageText}    ${timeout}
    Wait Until Element Is Visible    ${message_Element}    ${timeout}
-   Element Text Should Be    ${message_Element}    ${messageText}User Is Registered And Logged In
+   Element Text Should Be    ${message_Element}    ${messageText}
 
 User Is Registered And Logged In    
     [Tags]

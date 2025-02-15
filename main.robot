@@ -8,7 +8,7 @@ Test Teardown    Close Browser
 
 *** Test Cases ***
 # ------------------------
-# Registration And Login Tests
+# Registration Tests
 # ------------------------
 Test Valid User Registration
    [Tags]   Sjubaib
@@ -51,14 +51,27 @@ Test Registration With Too Short Password
    Click Submit Button   ${register_button}
    Message visibility and validation    ${register_message}    ${error_short_password_message}   10
    
+
+# ------------------------
+# Login Tests
+# ------------------------
 Valid Login Test
     [Tags]    Henrik Bergman
     Open Browser To Login Page    ${url}    ${browser}    ${title}    ${login_header_button}
-    Valid Login    ${valid_username}    ${valid_password}    ${username_element}    ${password_element}    ${login_button}
+    Valid Login    ${valid_username}    ${valid_password}    ${username_element}    ${password_element}    ${login_button}    ${home_page_section}
 
-# ------------------------
-# Registration And Login Tests
-# ------------------------
+Valid Registration and Login Test
+    [Tags]    Henrik Bergman, Sjubaib
+    Open Browser To Page   ${url}  ${browser}   ${title}    
+    Click Navigation Element   ${register_navigation_Element}
+    Type In Element   ${username_input_id}   ${valid_username}
+    Type In Element   ${password_input_id}   ${valid_password}
+    Click Submit Button   ${register_button}
+    Message visibility and validation   ${register_message}   ${registration_success_message}   10  
+
+    Open Login Section    ${login_header_button}    ${login_section}
+    Valid Login    ${valid_username}    ${valid_password}    ${username_element}    ${password_element}    ${login_button}    ${home_page_section}
+
 
 # ------------------------
 # Safari Booking Tests
