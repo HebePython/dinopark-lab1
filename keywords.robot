@@ -17,7 +17,25 @@ Open Browser To Page
 # ------------------------
 # User Registration
 # ------------------------
-User Is Registered And Logged In
+Type In Element
+   [Tags]   Sjubaib
+   [Arguments]   ${id_element}   ${text_to_write}
+   Input Text   ${id_element}   ${text_to_write}
+Click Submit Button
+   [Tags]   Sjubaib
+   [Arguments]  ${Submit_Button_to_click}  
+   Click Button   ${Submit_Button_to_click}
+Click Navigation Element
+   [Tags]   Sjubaib
+   [Arguments]   ${Element_to_click}
+   Click Element   ${Element_to_click}
+Message visibility and validation
+   [Tags]   Sjubaib
+   [Arguments]    ${message_Element}    ${messageText}    ${timeout}
+   Wait Until Element Is Visible    ${message_Element}    ${timeout}
+   Element Text Should Be    ${message_Element}    ${messageText}User Is Registered And Logged In
+
+User Is Registered And Logged In    
     [Tags]
     [Arguments]    ${valid_username}    ${valid_password}    ${username_element}    ${password_element}    ${login_button}
     Valid Login    ${valid_username}    ${valid_password}    ${username_element}    ${password_element}    ${login_button}
@@ -72,3 +90,4 @@ Add Safari To Cart
 Checkout
     [Tags]    Henrik Bergman
     [Arguments]
+
