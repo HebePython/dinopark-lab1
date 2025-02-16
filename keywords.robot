@@ -2,6 +2,7 @@
 Documentation    Robot lab 1, keywords
 Library    SeleniumLibrary
 Resource    login_function.robot
+Variables    variables.py    
 
 *** Keywords ***
 # ------------------------
@@ -17,18 +18,29 @@ Open Browser To Page
 # ------------------------
 # User Registration
 # ------------------------
-Type In Element
-   [Tags]   Sjubaib
-   [Arguments]   ${id_element}   ${text_to_write}
-   Input Text   ${id_element}   ${text_to_write}
+Register New User
+    [Tags]   Sjubaib
+    [Arguments]    ${username}    ${password}
+    Click Navigation Element   ${register_navigation_Element}
+    Type Text  ${username_input_id}    ${username}
+    Type Text   ${password_input_id}    ${password}
+    Click Submit Button    ${register_button}
+
+Type Text
+    [Tags]   Sjubaib
+    [Arguments]    ${element}    ${text}
+    Input Text    ${element}    ${text}
+
 Click Submit Button
    [Tags]   Sjubaib
    [Arguments]  ${Submit_Button_to_click}  
    Click Button   ${Submit_Button_to_click}
+
 Click Navigation Element
    [Tags]   Sjubaib
    [Arguments]   ${Element_to_click}
    Click Element   ${Element_to_click}
+   
 Message visibility and validation
    [Tags]   Sjubaib
    [Arguments]    ${message_Element}    ${messageText}    ${timeout}
@@ -36,8 +48,9 @@ Message visibility and validation
    Element Text Should Be    ${message_Element}    ${messageText}
 
 User Is Registered And Logged In    
-    [Tags]
+    [Tags]   Henrik Bergman, Sjubaib
     [Arguments]    ${valid_username}    ${valid_password}    ${username_element}    ${password_element}    ${login_button}
+    Register New User   ${valid_username}   ${valid_password}
     Valid Login    ${valid_username}    ${valid_password}    ${username_element}    ${password_element}    ${login_button}
 
 

@@ -1,500 +1,137 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2 (Python 3.13.1 on win32)" generated="2025-02-15T14:34:10.391487" rpa="false" schemaversion="5">
+<robot generator="Robot 7.2 (Python 3.13.1 on win32)" generated="2025-02-17T00:42:24.416546" rpa="false" schemaversion="5">
 <suite id="s1" name="Dinopark-Lab1" source="C:\Mjukvarutestare Utbildning\Testautomation för Continuous Testing\dinopark-lab1\dinopark-lab1">
 <suite id="s1-s1" name="Main" source="C:\Mjukvarutestare Utbildning\Testautomation för Continuous Testing\dinopark-lab1\dinopark-lab1\main.robot">
-<test id="s1-s1-t1" name="Test Valid User Registration" line="11">
+<test id="s1-s1-t1" name="test" line="30">
 <kw name="Open Browser To Page" owner="keywords">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-02-15T14:34:10.791523" level="INFO">Opening browser 'chrome' to base url 'file:///C:/Mjukvarutestare Utbildning/Testautomation för Continuous Testing/dinopark-lab1/dinopark-lab1/webpages/jurap.html'.</msg>
-<msg time="2025-02-15T14:34:11.823708" level="WARN">The chromedriver version (132.0.6834.110) detected in PATH at C:\Users\sjuba\Webdriver\chromedriver.exe might not be compatible with the detected chrome version (133.0.6943.98); currently, chromedriver 133.0.6943.98 is recommended for chrome 133.*, so it is advised to delete the driver in PATH and retry</msg>
+<msg time="2025-02-17T00:42:24.647036" level="INFO">Opening browser 'chrome' to base url 'file:///C:/Mjukvarutestare Utbildning/Testautomation för Continuous Testing/dinopark-lab1/dinopark-lab1/webpages/jurap.html'.</msg>
+<msg time="2025-02-17T00:42:24.999861" level="WARN">The chromedriver version (132.0.6834.110) detected in PATH at C:\Users\sjuba\Webdriver\chromedriver.exe might not be compatible with the detected chrome version (133.0.6943.98); currently, chromedriver 133.0.6943.98 is recommended for chrome 133.*, so it is advised to delete the driver in PATH and retry</msg>
 <arg>${url}</arg>
 <arg>${browser}</arg>
+<arg>options=add_argument("--incognito")</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-02-15T14:34:10.791067" elapsed="2.447638"/>
+<status status="PASS" start="2025-02-17T00:42:24.646755" elapsed="1.604744"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-02-15T14:34:13.239079" elapsed="0.037647"/>
+<status status="PASS" start="2025-02-17T00:42:26.251936" elapsed="0.036863"/>
 </kw>
 <kw name="Title Should Be" owner="SeleniumLibrary">
-<msg time="2025-02-15T14:34:13.285957" level="INFO">Page title is 'Jura-Stina-Kalle Park'.</msg>
+<msg time="2025-02-17T00:42:26.295622" level="INFO">Page title is 'Jura-Stina-Kalle Park'.</msg>
 <arg>${title}</arg>
 <doc>Verifies that the current page title equals ``title``.</doc>
-<status status="PASS" start="2025-02-15T14:34:13.277122" elapsed="0.009263"/>
+<status status="PASS" start="2025-02-17T00:42:26.289124" elapsed="0.006763"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-02-15T14:34:18.287496" level="INFO">Slept 5 seconds.</msg>
-<arg>5s</arg>
+<msg time="2025-02-17T00:42:29.297211" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-02-15T14:34:13.286596" elapsed="5.001826"/>
+<status status="PASS" start="2025-02-17T00:42:26.296059" elapsed="3.001962"/>
 </kw>
 <arg>${url}</arg>
 <arg>${browser}</arg>
 <arg>${title}</arg>
-<status status="PASS" start="2025-02-15T14:34:10.789360" elapsed="7.499486"/>
+<tag>Henrik Bergman</tag>
+<status status="PASS" start="2025-02-17T00:42:24.645922" elapsed="4.652521"/>
 </kw>
+<kw name="Register New User" owner="keywords">
 <kw name="Click Navigation Element" owner="keywords">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-02-15T14:34:18.293135" level="INFO">Clicking element '//*[@id="register-nav"]'.</msg>
+<msg time="2025-02-17T00:42:29.302838" level="INFO">Clicking element '//*[@id="register-nav"]'.</msg>
 <arg>${Element_to_click}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-02-15T14:34:18.291648" elapsed="0.100605"/>
+<status status="PASS" start="2025-02-17T00:42:29.302009" elapsed="0.056182"/>
 </kw>
 <arg>${register_navigation_Element}</arg>
 <tag>Sjubaib</tag>
-<status status="PASS" start="2025-02-15T14:34:18.290047" elapsed="0.102699"/>
+<status status="PASS" start="2025-02-17T00:42:29.301231" elapsed="0.057250"/>
 </kw>
-<kw name="Type In Element" owner="keywords">
+<kw name="Type Text" owner="keywords">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-02-15T14:34:18.395492" level="INFO">Typing text 'test1' into text field 'id=reg-username'.</msg>
-<arg>${id_element}</arg>
-<arg>${text_to_write}</arg>
+<msg time="2025-02-17T00:42:29.359379" level="INFO">Typing text 'TooShortPasswordUser' into text field 'id=reg-username'.</msg>
+<arg>${element}</arg>
+<arg>${text}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-02-15T14:34:18.395049" elapsed="0.166152"/>
+<status status="PASS" start="2025-02-17T00:42:29.359116" elapsed="0.076388"/>
 </kw>
 <arg>${username_input_id}</arg>
-<arg>${new_user_username}</arg>
+<arg>${username}</arg>
 <tag>Sjubaib</tag>
-<status status="PASS" start="2025-02-15T14:34:18.393770" elapsed="0.168633"/>
+<status status="PASS" start="2025-02-17T00:42:29.358708" elapsed="0.077000"/>
 </kw>
-<kw name="Type In Element" owner="keywords">
+<kw name="Type Text" owner="keywords">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-02-15T14:34:18.565691" level="INFO">Typing text '123123123' into text field 'id=reg-password'.</msg>
-<arg>${id_element}</arg>
-<arg>${text_to_write}</arg>
+<msg time="2025-02-17T00:42:29.437101" level="INFO">Typing text '123' into text field 'id=reg-password'.</msg>
+<arg>${element}</arg>
+<arg>${text}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-02-15T14:34:18.564853" elapsed="0.160186"/>
+<status status="PASS" start="2025-02-17T00:42:29.436397" elapsed="0.045134"/>
 </kw>
 <arg>${password_input_id}</arg>
-<arg>${new_user_password}</arg>
+<arg>${password}</arg>
 <tag>Sjubaib</tag>
-<status status="PASS" start="2025-02-15T14:34:18.563578" elapsed="0.161860"/>
+<status status="PASS" start="2025-02-17T00:42:29.435900" elapsed="0.045787"/>
 </kw>
 <kw name="Click Submit Button" owner="keywords">
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-02-15T14:34:18.728724" level="INFO">Clicking button '//*[@id="register-form"]/button'.</msg>
+<msg time="2025-02-17T00:42:29.482439" level="INFO">Clicking button '//*[@id="register-form"]/button'.</msg>
 <arg>${Submit_Button_to_click}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2025-02-15T14:34:18.727752" elapsed="0.131903"/>
+<status status="PASS" start="2025-02-17T00:42:29.482220" elapsed="0.078555"/>
 </kw>
 <arg>${register_button}</arg>
 <tag>Sjubaib</tag>
-<status status="PASS" start="2025-02-15T14:34:18.726472" elapsed="0.133523"/>
+<status status="PASS" start="2025-02-17T00:42:29.481864" elapsed="0.079073"/>
 </kw>
-<kw name="Message visibility and validation" owner="keywords">
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${message_Element}</arg>
-<arg>${timeout}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-02-15T14:34:18.862509" elapsed="0.036133"/>
-</kw>
-<kw name="Element Text Should Be" owner="SeleniumLibrary">
-<msg time="2025-02-15T14:34:18.900048" level="INFO">Verifying element 'id=register-message' contains exact text 'Registration successful! Redirecting to login...'.</msg>
-<arg>${message_Element}</arg>
-<arg>${messageText}</arg>
-<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
-<status status="PASS" start="2025-02-15T14:34:18.899145" elapsed="0.032988"/>
-</kw>
-<arg>${register_message}</arg>
-<arg>${registration_success_message}</arg>
-<arg>10</arg>
-<tag>Sjubaib</tag>
-<status status="PASS" start="2025-02-15T14:34:18.861311" elapsed="0.071225"/>
-</kw>
-<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
-<doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-02-15T14:34:18.933724" elapsed="2.496736"/>
-</kw>
-<tag>Sjubaib</tag>
-<status status="PASS" start="2025-02-15T14:34:10.787124" elapsed="10.644086"/>
-</test>
-<test id="s1-s1-t2" name="Test Register With Existing Username" line="20">
-<kw name="Open Browser To Page" owner="keywords">
-<kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-02-15T14:34:21.439138" level="INFO">Opening browser 'chrome' to base url 'file:///C:/Mjukvarutestare Utbildning/Testautomation för Continuous Testing/dinopark-lab1/dinopark-lab1/webpages/jurap.html'.</msg>
-<msg time="2025-02-15T14:34:21.898361" level="WARN">The chromedriver version (132.0.6834.110) detected in PATH at C:\Users\sjuba\Webdriver\chromedriver.exe might not be compatible with the detected chrome version (133.0.6943.98); currently, chromedriver 133.0.6943.98 is recommended for chrome 133.*, so it is advised to delete the driver in PATH and retry</msg>
-<arg>${url}</arg>
-<arg>${browser}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-02-15T14:34:21.438145" elapsed="1.980950"/>
-</kw>
-<kw name="Maximize Browser Window" owner="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-02-15T14:34:23.419473" elapsed="0.034192"/>
-</kw>
-<kw name="Title Should Be" owner="SeleniumLibrary">
-<msg time="2025-02-15T14:34:23.461294" level="INFO">Page title is 'Jura-Stina-Kalle Park'.</msg>
-<arg>${title}</arg>
-<doc>Verifies that the current page title equals ``title``.</doc>
-<status status="PASS" start="2025-02-15T14:34:23.454040" elapsed="0.007942"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2025-02-15T14:34:28.463216" level="INFO">Slept 5 seconds.</msg>
-<arg>5s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-02-15T14:34:23.462327" elapsed="5.001990"/>
-</kw>
-<arg>${url}</arg>
-<arg>${browser}</arg>
-<arg>${title}</arg>
-<status status="PASS" start="2025-02-15T14:34:21.436333" elapsed="7.028527"/>
-</kw>
-<kw name="Click Navigation Element" owner="keywords">
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-02-15T14:34:28.467033" level="INFO">Clicking element '//*[@id="register-nav"]'.</msg>
-<arg>${Element_to_click}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-02-15T14:34:28.466348" elapsed="0.103106"/>
-</kw>
-<arg>${register_navigation_Element}</arg>
-<tag>Sjubaib</tag>
-<status status="PASS" start="2025-02-15T14:34:28.465581" elapsed="0.104106"/>
-</kw>
-<kw name="Type In Element" owner="keywords">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-02-15T14:34:28.571897" level="INFO">Typing text 'test1' into text field 'id=reg-username'.</msg>
-<arg>${id_element}</arg>
-<arg>${text_to_write}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-02-15T14:34:28.571397" elapsed="0.152557"/>
-</kw>
-<arg>${username_input_id}</arg>
-<arg>${new_user_username}</arg>
-<tag>Sjubaib</tag>
-<status status="PASS" start="2025-02-15T14:34:28.570562" elapsed="0.153656"/>
-</kw>
-<kw name="Type In Element" owner="keywords">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-02-15T14:34:28.726066" level="INFO">Typing text '123123123' into text field 'id=reg-password'.</msg>
-<arg>${id_element}</arg>
-<arg>${text_to_write}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-02-15T14:34:28.725569" elapsed="0.101378"/>
-</kw>
-<arg>${password_input_id}</arg>
-<arg>${new_user_password}</arg>
-<tag>Sjubaib</tag>
-<status status="PASS" start="2025-02-15T14:34:28.724730" elapsed="0.103286"/>
-</kw>
-<kw name="Click Submit Button" owner="keywords">
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-02-15T14:34:28.830478" level="INFO">Clicking button '//*[@id="register-form"]/button'.</msg>
-<arg>${Submit_Button_to_click}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2025-02-15T14:34:28.829951" elapsed="0.089132"/>
-</kw>
-<arg>${register_button}</arg>
-<tag>Sjubaib</tag>
-<status status="PASS" start="2025-02-15T14:34:28.828847" elapsed="0.090587"/>
-</kw>
-<kw name="Click Navigation Element" owner="keywords">
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-02-15T14:34:28.921511" level="INFO">Clicking element '//*[@id="register-nav"]'.</msg>
-<arg>${Element_to_click}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-02-15T14:34:28.920890" elapsed="0.060666"/>
-</kw>
-<arg>${register_navigation_Element}</arg>
-<tag>Sjubaib</tag>
-<status status="PASS" start="2025-02-15T14:34:28.920010" elapsed="0.061862"/>
-</kw>
-<kw name="Type In Element" owner="keywords">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-02-15T14:34:28.983630" level="INFO">Typing text 'test1' into text field 'id=reg-username'.</msg>
-<arg>${id_element}</arg>
-<arg>${text_to_write}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-02-15T14:34:28.983087" elapsed="0.109266"/>
-</kw>
-<arg>${username_input_id}</arg>
-<arg>${new_user_username}</arg>
-<tag>Sjubaib</tag>
-<status status="PASS" start="2025-02-15T14:34:28.982392" elapsed="0.110314"/>
-</kw>
-<kw name="Type In Element" owner="keywords">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-02-15T14:34:29.094977" level="INFO">Typing text '123123123' into text field 'id=reg-password'.</msg>
-<arg>${id_element}</arg>
-<arg>${text_to_write}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-02-15T14:34:29.094249" elapsed="0.076398"/>
-</kw>
-<arg>${password_input_id}</arg>
-<arg>${new_user_password}</arg>
-<tag>Sjubaib</tag>
-<status status="PASS" start="2025-02-15T14:34:29.093497" elapsed="0.077708"/>
-</kw>
-<kw name="Click Submit Button" owner="keywords">
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-02-15T14:34:29.173822" level="INFO">Clicking button '//*[@id="register-form"]/button'.</msg>
-<arg>${Submit_Button_to_click}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2025-02-15T14:34:29.173065" elapsed="0.084068"/>
-</kw>
-<arg>${register_button}</arg>
-<tag>Sjubaib</tag>
-<status status="PASS" start="2025-02-15T14:34:29.172135" elapsed="0.085361"/>
-</kw>
-<kw name="Message visibility and validation" owner="keywords">
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${message_Element}</arg>
-<arg>${timeout}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-02-15T14:34:29.260430" elapsed="0.028251"/>
-</kw>
-<kw name="Element Text Should Be" owner="SeleniumLibrary">
-<msg time="2025-02-15T14:34:29.290869" level="INFO">Verifying element 'id=register-message' contains exact text 'Username already exists. Please choose another.'.</msg>
-<arg>${message_Element}</arg>
-<arg>${messageText}</arg>
-<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
-<status status="PASS" start="2025-02-15T14:34:29.289470" elapsed="0.026465"/>
-</kw>
-<arg>${register_message}</arg>
-<arg>${error_existing_user_message}</arg>
-<arg>10</arg>
-<tag>Sjubaib</tag>
-<status status="PASS" start="2025-02-15T14:34:29.258813" elapsed="0.057526"/>
-</kw>
-<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
-<doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-02-15T14:34:29.317474" elapsed="2.570789"/>
-</kw>
-<tag>Sjubaib</tag>
-<status status="PASS" start="2025-02-15T14:34:21.433666" elapsed="10.455437"/>
-</test>
-<test id="s1-s1-t3" name="Test Registration With Empty Fields" line="34">
-<kw name="Open Browser To Page" owner="keywords">
-<kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-02-15T14:34:31.897348" level="INFO">Opening browser 'chrome' to base url 'file:///C:/Mjukvarutestare Utbildning/Testautomation för Continuous Testing/dinopark-lab1/dinopark-lab1/webpages/jurap.html'.</msg>
-<msg time="2025-02-15T14:34:32.435405" level="WARN">The chromedriver version (132.0.6834.110) detected in PATH at C:\Users\sjuba\Webdriver\chromedriver.exe might not be compatible with the detected chrome version (133.0.6943.98); currently, chromedriver 133.0.6943.98 is recommended for chrome 133.*, so it is advised to delete the driver in PATH and retry</msg>
-<arg>${url}</arg>
-<arg>${browser}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-02-15T14:34:31.896368" elapsed="1.913588"/>
-</kw>
-<kw name="Maximize Browser Window" owner="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-02-15T14:34:33.811530" elapsed="0.029621"/>
-</kw>
-<kw name="Title Should Be" owner="SeleniumLibrary">
-<msg time="2025-02-15T14:34:33.851130" level="INFO">Page title is 'Jura-Stina-Kalle Park'.</msg>
-<arg>${title}</arg>
-<doc>Verifies that the current page title equals ``title``.</doc>
-<status status="PASS" start="2025-02-15T14:34:33.841520" elapsed="0.010306"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2025-02-15T14:34:38.853968" level="INFO">Slept 5 seconds.</msg>
-<arg>5s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-02-15T14:34:33.852310" elapsed="5.003102"/>
-</kw>
-<arg>${url}</arg>
-<arg>${browser}</arg>
-<arg>${title}</arg>
-<status status="PASS" start="2025-02-15T14:34:31.894539" elapsed="6.961728"/>
-</kw>
-<kw name="Click Navigation Element" owner="keywords">
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-02-15T14:34:38.861265" level="INFO">Clicking element '//*[@id="register-nav"]'.</msg>
-<arg>${Element_to_click}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-02-15T14:34:38.859757" elapsed="0.105706"/>
-</kw>
-<arg>${register_navigation_Element}</arg>
-<tag>Sjubaib</tag>
-<status status="PASS" start="2025-02-15T14:34:38.857862" elapsed="0.107774"/>
-</kw>
-<kw name="Type In Element" owner="keywords">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-02-15T14:34:38.969418" level="INFO">Typing text ' ' into text field 'id=reg-username'.</msg>
-<arg>${id_element}</arg>
-<arg>${text_to_write}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-02-15T14:34:38.968266" elapsed="0.191088"/>
-</kw>
-<arg>${username_input_id}</arg>
-<arg>${empty_username}</arg>
-<tag>Sjubaib</tag>
-<status status="PASS" start="2025-02-15T14:34:38.966501" elapsed="0.193799"/>
-</kw>
-<kw name="Type In Element" owner="keywords">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-02-15T14:34:39.163211" level="INFO">Typing text ' ' into text field 'id=reg-password'.</msg>
-<arg>${id_element}</arg>
-<arg>${text_to_write}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-02-15T14:34:39.162458" elapsed="0.128080"/>
-</kw>
-<arg>${password_input_id}</arg>
-<arg>${empty_password}</arg>
-<tag>Sjubaib</tag>
-<status status="PASS" start="2025-02-15T14:34:39.161283" elapsed="0.129893"/>
-</kw>
-<kw name="Click Submit Button" owner="keywords">
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-02-15T14:34:39.294710" level="INFO">Clicking button '//*[@id="register-form"]/button'.</msg>
-<arg>${Submit_Button_to_click}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2025-02-15T14:34:39.293838" elapsed="0.124178"/>
-</kw>
-<arg>${register_button}</arg>
-<tag>Sjubaib</tag>
-<status status="PASS" start="2025-02-15T14:34:39.292615" elapsed="0.125878"/>
-</kw>
-<kw name="Message visibility and validation" owner="keywords">
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${message_Element}</arg>
-<arg>${timeout}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-02-15T14:34:39.420746" elapsed="0.029869"/>
-</kw>
-<kw name="Element Text Should Be" owner="SeleniumLibrary">
-<msg time="2025-02-15T14:34:39.452687" level="INFO">Verifying element 'id=register-message' contains exact text 'Please enter both a username and password.'.</msg>
-<arg>${message_Element}</arg>
-<arg>${messageText}</arg>
-<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
-<status status="PASS" start="2025-02-15T14:34:39.451370" elapsed="0.030304"/>
-</kw>
-<arg>${register_message}</arg>
-<arg>${error_empty_fields_message}</arg>
-<arg>10</arg>
-<tag>Sjubaib</tag>
-<status status="PASS" start="2025-02-15T14:34:39.419391" elapsed="0.062696"/>
-</kw>
-<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
-<doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-02-15T14:34:39.483074" elapsed="2.520218"/>
-</kw>
-<tag>Sjubaib</tag>
-<status status="PASS" start="2025-02-15T14:34:31.891879" elapsed="10.112007"/>
-</test>
-<test id="s1-s1-t4" name="Test Registration With Too Short Password" line="43">
-<kw name="Open Browser To Page" owner="keywords">
-<kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-02-15T14:34:42.014808" level="INFO">Opening browser 'chrome' to base url 'file:///C:/Mjukvarutestare Utbildning/Testautomation för Continuous Testing/dinopark-lab1/dinopark-lab1/webpages/jurap.html'.</msg>
-<msg time="2025-02-15T14:34:42.496697" level="WARN">The chromedriver version (132.0.6834.110) detected in PATH at C:\Users\sjuba\Webdriver\chromedriver.exe might not be compatible with the detected chrome version (133.0.6943.98); currently, chromedriver 133.0.6943.98 is recommended for chrome 133.*, so it is advised to delete the driver in PATH and retry</msg>
-<arg>${url}</arg>
-<arg>${browser}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-02-15T14:34:42.013710" elapsed="1.944124"/>
-</kw>
-<kw name="Maximize Browser Window" owner="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-02-15T14:34:43.960069" elapsed="0.073520"/>
-</kw>
-<kw name="Title Should Be" owner="SeleniumLibrary">
-<msg time="2025-02-15T14:34:44.043365" level="INFO">Page title is 'Jura-Stina-Kalle Park'.</msg>
-<arg>${title}</arg>
-<doc>Verifies that the current page title equals ``title``.</doc>
-<status status="PASS" start="2025-02-15T14:34:44.034373" elapsed="0.009532"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2025-02-15T14:34:49.045470" level="INFO">Slept 5 seconds.</msg>
-<arg>5s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-02-15T14:34:44.044274" elapsed="5.002462"/>
-</kw>
-<arg>${url}</arg>
-<arg>${browser}</arg>
-<arg>${title}</arg>
-<status status="PASS" start="2025-02-15T14:34:42.011762" elapsed="7.035724"/>
-</kw>
-<kw name="Click Navigation Element" owner="keywords">
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-02-15T14:34:49.051616" level="INFO">Clicking element '//*[@id="register-nav"]'.</msg>
-<arg>${Element_to_click}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-02-15T14:34:49.050349" elapsed="0.084189"/>
-</kw>
-<arg>${register_navigation_Element}</arg>
-<tag>Sjubaib</tag>
-<status status="PASS" start="2025-02-15T14:34:49.048818" elapsed="0.086225"/>
-</kw>
-<kw name="Type In Element" owner="keywords">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-02-15T14:34:49.137906" level="INFO">Typing text 'TooShortPasswordUser' into text field 'id=reg-username'.</msg>
-<arg>${id_element}</arg>
-<arg>${text_to_write}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-02-15T14:34:49.137076" elapsed="0.151014"/>
-</kw>
-<arg>${username_input_id}</arg>
 <arg>${short_password_username}</arg>
-<tag>Sjubaib</tag>
-<status status="PASS" start="2025-02-15T14:34:49.135853" elapsed="0.152583"/>
-</kw>
-<kw name="Type In Element" owner="keywords">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-02-15T14:34:49.291526" level="INFO">Typing text '123' into text field 'id=reg-password'.</msg>
-<arg>${id_element}</arg>
-<arg>${text_to_write}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-02-15T14:34:49.290118" elapsed="0.075385"/>
-</kw>
-<arg>${password_input_id}</arg>
 <arg>${short_password}</arg>
 <tag>Sjubaib</tag>
-<status status="PASS" start="2025-02-15T14:34:49.289194" elapsed="0.076642"/>
-</kw>
-<kw name="Click Submit Button" owner="keywords">
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-02-15T14:34:49.367601" level="INFO">Clicking button '//*[@id="register-form"]/button'.</msg>
-<arg>${Submit_Button_to_click}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2025-02-15T14:34:49.367008" elapsed="0.086964"/>
-</kw>
-<arg>${register_button}</arg>
-<tag>Sjubaib</tag>
-<status status="PASS" start="2025-02-15T14:34:49.366309" elapsed="0.087941"/>
+<status status="PASS" start="2025-02-17T00:42:29.299895" elapsed="0.261122"/>
 </kw>
 <kw name="Message visibility and validation" owner="keywords">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${message_Element}</arg>
 <arg>${timeout}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-02-15T14:34:49.456542" elapsed="0.026304"/>
+<status status="PASS" start="2025-02-17T00:42:29.561708" elapsed="0.015074"/>
 </kw>
 <kw name="Element Text Should Be" owner="SeleniumLibrary">
-<msg time="2025-02-15T14:34:49.484781" level="INFO">Verifying element 'id=register-message' contains exact text 'Password must be at least 8 characters long.'.</msg>
+<msg time="2025-02-17T00:42:29.577296" level="INFO">Verifying element 'id=register-message' contains exact text 'Password must be at least 8 characters long.'.</msg>
 <arg>${message_Element}</arg>
 <arg>${messageText}</arg>
 <doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
-<status status="PASS" start="2025-02-15T14:34:49.483570" elapsed="0.022570"/>
+<status status="PASS" start="2025-02-17T00:42:29.576966" elapsed="0.015006"/>
 </kw>
 <arg>${register_message}</arg>
 <arg>${error_short_password_message}</arg>
 <arg>10</arg>
 <tag>Sjubaib</tag>
-<status status="PASS" start="2025-02-15T14:34:49.455010" elapsed="0.051566"/>
+<status status="PASS" start="2025-02-17T00:42:29.561316" elapsed="0.030820"/>
 </kw>
 <kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-02-15T14:34:49.507748" elapsed="2.295426"/>
+<status status="PASS" start="2025-02-17T00:42:29.592474" elapsed="2.259339"/>
 </kw>
-<tag>Sjubaib</tag>
-<status status="PASS" start="2025-02-15T14:34:42.008780" elapsed="9.795152"/>
+<status status="PASS" start="2025-02-17T00:42:24.644854" elapsed="7.207393"/>
 </test>
 <doc>Robot lab 1, Grupp 1.     Abdirahman Bayle, Sjubaib Rifai, Henrik Bergman</doc>
-<status status="PASS" start="2025-02-15T14:34:10.421748" elapsed="41.385761"/>
+<status status="PASS" start="2025-02-17T00:42:24.435940" elapsed="7.417589"/>
 </suite>
-<status status="PASS" start="2025-02-15T14:34:10.395985" elapsed="41.414982"/>
+<status status="PASS" start="2025-02-17T00:42:24.420171" elapsed="7.434566"/>
 </suite>
 <statistics>
 <total>
-<stat pass="4" fail="0" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="4" fail="0" skip="0">Sjubaib</stat>
 </tag>
 <suite>
-<stat name="Dinopark-Lab1" id="s1" pass="4" fail="0" skip="0">Dinopark-Lab1</stat>
-<stat name="Main" id="s1-s1" pass="4" fail="0" skip="0">Dinopark-Lab1.Main</stat>
+<stat name="Dinopark-Lab1" id="s1" pass="1" fail="0" skip="0">Dinopark-Lab1</stat>
+<stat name="Main" id="s1-s1" pass="1" fail="0" skip="0">Dinopark-Lab1.Main</stat>
 </suite>
 </statistics>
 <errors>
-<msg time="2025-02-15T14:34:11.823708" level="WARN">The chromedriver version (132.0.6834.110) detected in PATH at C:\Users\sjuba\Webdriver\chromedriver.exe might not be compatible with the detected chrome version (133.0.6943.98); currently, chromedriver 133.0.6943.98 is recommended for chrome 133.*, so it is advised to delete the driver in PATH and retry</msg>
-<msg time="2025-02-15T14:34:21.898361" level="WARN">The chromedriver version (132.0.6834.110) detected in PATH at C:\Users\sjuba\Webdriver\chromedriver.exe might not be compatible with the detected chrome version (133.0.6943.98); currently, chromedriver 133.0.6943.98 is recommended for chrome 133.*, so it is advised to delete the driver in PATH and retry</msg>
-<msg time="2025-02-15T14:34:32.435405" level="WARN">The chromedriver version (132.0.6834.110) detected in PATH at C:\Users\sjuba\Webdriver\chromedriver.exe might not be compatible with the detected chrome version (133.0.6943.98); currently, chromedriver 133.0.6943.98 is recommended for chrome 133.*, so it is advised to delete the driver in PATH and retry</msg>
-<msg time="2025-02-15T14:34:42.496697" level="WARN">The chromedriver version (132.0.6834.110) detected in PATH at C:\Users\sjuba\Webdriver\chromedriver.exe might not be compatible with the detected chrome version (133.0.6943.98); currently, chromedriver 133.0.6943.98 is recommended for chrome 133.*, so it is advised to delete the driver in PATH and retry</msg>
+<msg time="2025-02-17T00:42:24.999861" level="WARN">The chromedriver version (132.0.6834.110) detected in PATH at C:\Users\sjuba\Webdriver\chromedriver.exe might not be compatible with the detected chrome version (133.0.6943.98); currently, chromedriver 133.0.6943.98 is recommended for chrome 133.*, so it is advised to delete the driver in PATH and retry</msg>
 </errors>
 </robot>
