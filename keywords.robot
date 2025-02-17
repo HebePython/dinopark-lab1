@@ -20,7 +20,7 @@ Choose Type, Category and Quantity
     [Arguments]    ${type_age}    ${type_category}    ${quantity}
     Select From List By Value    ${type_age}    Child 
     Select From List By Value    ${type_category}    VIP
-    Input Text    ${quantity}    2
+    Input Text    ${quantity}    100000000
 
 Click Add To Cart
     [Tags]    Abdirahman Bayle
