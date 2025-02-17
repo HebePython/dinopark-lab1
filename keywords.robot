@@ -10,9 +10,21 @@ Open Browser To Page
     Title Should Be    ${title}
 
 Navigate TO Buy Tickets Page
+    [Tags]    Abdirahman Bayle
     [Arguments]    ${buy_tickets}    ${tickets_page}    
     Click Link     ${buy_tickets}    
     Wait Until Page Contains Element   ${tickets_page}    timeout= 10s
     
+Choose Type, Category and Quantity
+    [Tags]    Abdirahman Bayle
+    [Arguments]    ${type_age}    ${type_category}    ${quantity}
+    Select From List By Value    ${type_age}    Child 
+    Select From List By Value    ${type_category}    VIP
+    Input Text    ${quantity}    2
 
+Click Add To Cart
+    [Tags]    Abdirahman Bayle
+    [Arguments]    ${add_cart}    ${page_contains}
+    Click Button    ${add_cart}
+    Wait Until Page Contains    ${page_contains}
 
