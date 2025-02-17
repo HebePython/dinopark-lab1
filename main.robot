@@ -6,6 +6,11 @@ Variables    variables.py
 Test Teardown    Close Browser
 
 
+
+
+
+
+
 *** Test Cases ***
 # ------------------------
 # Registration Tests
@@ -76,6 +81,16 @@ Book T-Rex Rumble Safari Weekday
     And T-Rex Rumble Safari Is Selected
     Then Add Safari To Cart
     And Checkout
+
+
+Valid Buy Ticket Test
+    Open Browser To Page    ${url}    ${browser}    ${title}
+    Navigate TO Buy Tickets Page    ${buy_tickets}    ${tickets_page}   
+    Choose Type, Category and Quantity    ${type_age}   ${type_category}    ${quantity}    5    Child    VIP
+    Click Add To Cart    ${add_cart}    ${page_contains}
+
+
+
 
 
 

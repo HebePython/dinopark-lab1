@@ -59,6 +59,28 @@ home_page_section = "id=home-section"
 # Header elements
 login_header_button = "xpath=//a[@data-section='login-section']"
 
+#Ticket page
+tickets_page = "id=ticket-form"
+#Ticket form
+buy_tickets = "Buy Tickets"
+
+#Ticket List
+type_age = "id=ticket-type"
+type_category = "id=ticket-category"
+
+#Qantity
+quantity = "id=ticket-quantity"
+
+# Add to cart button
+Add_cart = "Add to Cart"
+
+# Tickets confirmed
+page_contains = "Tickets added to cart"
+
+
+
+
+
 #endregion
 
 #region Safari Booking & Calender elements
