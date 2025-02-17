@@ -51,7 +51,7 @@ User Is Registered And Logged In
     [Tags]   Henrik Bergman, Sjubaib
     [Arguments]    ${valid_username}    ${valid_password}    ${username_element}    ${password_element}    ${login_button}
     Register New User   ${valid_username}   ${valid_password}
-    Valid Login    ${valid_username}    ${valid_password}    ${username_element}    ${password_element}    ${login_button}
+    Valid Login    ${valid_username}    ${valid_password}    ${username_element}    ${password_element}    ${login_button}    ${home_page_section}
 
 
 # ------------------------
@@ -60,6 +60,10 @@ User Is Registered And Logged In
 Regular Adult Ticket Is In Cart
     [Tags]    Henrik Bergman
     [Arguments]
+
+User has 2 Adult and 2 Child VIP Tickets in Cart
+    [Tags]   Sjubaib
+    [Arguments]    
 
 
 # ------------------------
@@ -70,6 +74,10 @@ Weekday Is Selected In Calender
     [Tags]    Henrik Bergman
     [Arguments]    ${weekday_user_input}    ${date_input_element}
     Input Text    ${date_input_element}    ${weekday_user_input} 
+
+User Selects a Weekend Day
+    [Tags]   Sjubaib
+    [Arguments]     
 
 
 # ------------------------
@@ -96,6 +104,13 @@ Add Safari To Cart
     [Tags]    Henrik Bergman
     [Arguments]
 
+
+# ------------------------
+# Accept Alert
+# ------------------------
+User Accepts the Alert 
+    [Tags]   Sjubaib
+    [Arguments] 
 
 # ------------------------
 # Checkout

@@ -78,4 +78,13 @@ Book T-Rex Rumble Safari Weekday
     And Checkout
 
 
-
+Test Book Herbivore Safari in Weekend Day
+   [Tags]   Sjubaib
+    Given User is Registered and Logged In
+    And User has 2 Adult and 2 Child VIP Tickets in Cart
+    And Safari Page is Open
+    When User Selects a Weekend Day
+    And User Selects Herbivore Tour Safari
+    Then Add Safari To Cart
+    And User Accepts the Alert 
+    And Checkout
