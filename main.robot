@@ -16,7 +16,7 @@ Test Teardown    Close Browser
 Valid Buy Ticket Test
     Open Browser To Page    ${url}    ${browser}    ${title}
     Navigate TO Buy Tickets Page    ${buy_tickets}    ${tickets_page}   
-    Choose Type, Category and Quantity    ${type_age}   ${type_category}    ${quantity}
+    Choose Type, Category and Quantity    ${type_age}   ${type_category}    ${quantity}    5    Child    VIP
     Click Add To Cart    ${add_cart}    ${page_contains}
 
 
@@ -24,8 +24,3 @@ Valid Buy Ticket Test
 
 
 
-Non Valid Buy Ticket Test
-    Open Browser To Page    ${url}    ${browser}    ${title}
-    Navigate TO Buy Tickets Page    ${buy_tickets}    ${tickets_page}   
-    Choose Type, Category and Quantity    ${type_age}   ${type_category}    ${quantity}
-    Click Add To Cart    ${add_cart}    ${page_contains}

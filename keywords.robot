@@ -17,10 +17,10 @@ Navigate TO Buy Tickets Page
     
 Choose Type, Category and Quantity
     [Tags]    Abdirahman Bayle
-    [Arguments]    ${type_age}    ${type_category}    ${quantity}
-    Select From List By Value    ${type_age}    Child 
-    Select From List By Value    ${type_category}    VIP
-    Input Text    ${quantity}    100000000
+    [Arguments]    ${type_age}    ${type_category}    ${quantity}    ${quantity_num}    ${age}    ${ticket}
+    Select From List By Value    ${type_age}    ${age}     
+    Select From List By Value    ${type_category}    ${ticket}
+    Input Text    ${quantity}    ${quantity_num}
 
 Click Add To Cart
     [Tags]    Abdirahman Bayle
