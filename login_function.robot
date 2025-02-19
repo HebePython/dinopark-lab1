@@ -6,6 +6,7 @@ Library    SeleniumLibrary
 Valid Login 
     [Tags]    Henrik Bergman
     [Arguments]    ${valid_username}    ${valid_password}    ${username_element}    ${password_element}    ${login_button}    ${home_page_section}
+    Wait Until Element Is Visible    ${username_element}    
     Input Text    ${username_element}   ${valid_username} 
     Input Text    ${password_element}    ${valid_password}  
     Click Button    ${login_button}
