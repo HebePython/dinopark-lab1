@@ -51,9 +51,9 @@ Message visibility and validation
 
 User Is Registered And Logged In    
     [Tags]   Henrik Bergman, Sjubaib
-    [Arguments]    ${valid_username}    ${valid_password}    ${username_element}    ${password_element}    ${login_button}
+    [Arguments]    ${valid_username}    ${valid_password}    ${username_element}    ${password_element}    ${login_button}    ${home_page_section}
     Register New User   ${valid_username}   ${valid_password}
-    Valid Login    ${valid_username}    ${valid_password}    ${username_element}    ${password_element}    ${login_button}
+    Valid Login    ${valid_username}    ${valid_password}    ${username_element}    ${password_element}    ${login_button}    ${home_page_section}
 
 
 # ------------------------
@@ -106,17 +106,21 @@ Safari Page Is Open
 
 Herbivore Tour Safari Is Selected
     [Tags]    Henrik Bergman
-    [Arguments]
+    [Arguments]    ${safari_dropdown_element}
+    Select From List By Value    ${safari_dropdown_element}    "Herbivore Tour"
+
 
 
 T-Rex Rumble Safari Is Selected
     [Tags]    Henrik Bergman
-    [Arguments]
+    [Arguments]    ${safari_dropdown_element}
+    Select From List By Value    ${safari_dropdown_element}    "T-Rex Rumble"
 
 
 Add Safari To Cart
     [Tags]    Henrik Bergman
-    [Arguments]
+    [Arguments]    ${submit_safari_button}
+    Click Button    ${submit_safari_button}
 
 
 # ------------------------

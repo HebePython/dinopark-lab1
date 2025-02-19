@@ -98,8 +98,11 @@ safari_page_section = "id=safari-section"
 
 safari_header_link = 'xpath=//*[@id="safari-nav"]/a'
 
+safari_dropdown_element = "id=safari-type"
 
+herbivore_tour_option = 'xpath=//*[@id="safari-type"]/option[1]'
 
+submit_safari_button = 'xpath=//*[@id="safari-form"]/button'
 #endregion
 
 

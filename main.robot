@@ -2,12 +2,7 @@
 Documentation    Robot lab 1, Grupp 1.     Abdirahman Bayle, Sjubaib Rifai, Henrik Bergman
 Library    SeleniumLibrary
 Resource    keywords.robot
-Variables    variables.py
 Test Teardown    Close Browser
-
-
-
-
 
 
 
@@ -63,12 +58,12 @@ Valid Registration and Login Test
 # ------------------------
 Book Herbivore Safari Weekday
     [Tags]    Henrik Bergman  
-    Given User Is Registered And Logged In     ${valid_username}    ${valid_password}    ${username_element}    ${password_element}    ${login_button}
+    Given User Is Registered And Logged In     ${valid_username}    ${valid_password}    ${username_element}    ${password_element}    ${login_button}    ${home_page_section}
     And Regular Adult Ticket Is In Cart
     And Safari Page Is Open    ${url}    ${browser}    ${title}    ${safari_header_link}    ${safari_page_section}
     When Weekday Is Selected In Calender    ${weekday_user_input}    ${date_input_element}
-    And Herbivore Tour Safari Is Selected
-    Then Add Safari To Cart
+    And Herbivore Tour Safari Is Selected    ${safari_dropdown_element}
+    Then Add Safari To Cart    ${submit_safari_button}
     And Checkout
 
 
