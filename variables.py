@@ -100,9 +100,21 @@ safari_header_link = 'xpath=//*[@id="safari-nav"]/a'
 
 safari_dropdown_element = "id=safari-type"
 
-herbivore_tour_option = 'xpath=//*[@id="safari-type"]/option[1]'
+herbivore_tour_option = 'Herbivore Tour'
 
 submit_safari_button = 'xpath=//*[@id="safari-form"]/button'
 #endregion
 
 
+
+# Checkout page
+
+checkout_header_link = 'xpath=//*[@id="cart-nav"]/a'
+
+checkout_page_section = "id=cart-section"
+
+checkout_total_cost_element = "id=cart-total"
+
+checkout_submit_button = "id=checkout-button"
+
+checkout_item_list = "id=cart-details"
