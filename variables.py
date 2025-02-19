@@ -1,5 +1,6 @@
 import os
 from date_check import get_weekday, get_weekend
+
 current_directory = os.getcwd().replace('\\', '/')
 
 #browser
@@ -76,6 +77,43 @@ safari_page_section = "id=safari-section"
 
 safari_header_link = 'xpath=//*[@id="safari-nav"]/a'
 
+safari_button = '//*[@id="safari-form"]/button'
+
+# Safari Type elements & Values
+safari_type_element = "id=safari-type"
+
+Herbivore_Tour_Value = "Herbivore Tour"
+TRex_Rumble_Value =  "T-Rex Rumble"
+Herbivore_Tour_with_Feeding_Value = "Herbivore Tour with Feeding"
+TRex_Rumble_eXtreme_TPack_Value = "T-Rex Rumble eXtreme Thrill Pack"
+
+
+#Ticket page
+tickets_page = "id=ticket-form"
+
+#Ticket form
+buy_tickets = "Buy Tickets"
+
+#Ticket List
+type_age = "id=ticket-type"
+type_category = "id=ticket-category"
+
+#Qantity
+quantity = "id=ticket-quantity"
+
+# Add to cart button
+Add_cart = "Add to Cart"
+
+# Tickets confirmed
+page_contains = "Item added to cart!"
+
+print(get_weekday)
+
+# Checkout page elements
+checkout_header_element = "id=cart-nav"
+checkout_page_section = "id=cart-section"
+
+checkout_button = "id=checkout-button"
 
 
 #endregion

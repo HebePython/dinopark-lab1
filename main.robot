@@ -52,13 +52,26 @@ Valid Registration and Login Test
     Open Login Section    ${login_header_button}    ${login_section}
     Valid Login    ${valid_username}    ${valid_password}    ${username_element}    ${password_element}    ${login_button}    ${home_page_section}
 
-
+# ------------------------
+# Tickets Test
+# ------------------------
+Valid Buy Ticket Test
+    Open Browser To Page    ${url}    ${browser}    ${title}
+    Register New User   ${valid_username}    ${valid_password}
+    Open Login Section    ${login_header_button}    ${login_section}
+    Valid Login    ${valid_username}    ${valid_password}    ${username_element}    ${password_element}    ${login_button}    ${home_page_section}
+      
+    Navigate TO Buy Tickets Page    ${buy_tickets}    ${tickets_page}   
+    Choose Type, Category and Quantity    ${type_age}   ${type_category}    ${quantity}    5    Child    VIP
+    Click Add To Cart    ${add_cart}    ${page_contains}  
+    User Accepts the Alert
+    
 # ------------------------
 # Safari Booking Tests
 # ------------------------
 Book Herbivore Safari Weekday
     [Tags]    Henrik Bergman  
-    Given User Is Registered And Logged In     ${valid_username}    ${valid_password}    ${username_element}    ${password_element}    ${login_button}
+    Given User Is Registered And Logged In     ${valid_username}    ${valid_password}    ${username_element}    ${password_element}    ${login_button}   ${home_page_section}
     And Regular Adult Ticket Is In Cart
     And Safari Page Is Open    ${url}    ${browser}    ${title}    ${safari_header_link}    ${safari_page_section}
     When Weekday Is Selected In Calender    ${weekday_user_input}    ${date_input_element}
@@ -69,7 +82,7 @@ Book Herbivore Safari Weekday
 
 Book T-Rex Rumble Safari Weekday
     [Tags]    Henrik Bergman
-    Given User Is Registered And Logged In
+    Given User Is Registered And Logged In   
     And Regular Adult Ticket Is In Cart
     And Safari Page Is Open
     When Weekday Is Selected In Calender
@@ -80,11 +93,17 @@ Book T-Rex Rumble Safari Weekday
 
 Test Book Herbivore Safari in Weekend Day
    [Tags]   Sjubaib
-    Given User is Registered and Logged In
-    And User has 2 Adult and 2 Child VIP Tickets in Cart
-    And Safari Page is Open
+    Given User is Registered and Logged In   ${valid_username}    ${valid_password}   ${username_element}    ${password_element}    ${login_button}   ${home_page_section}
+      And User has 2 Adult and 2 Child VIP Tickets in Cart 
+      And User Accepts the Alert     
+      And Safari Page is Open    ${safari_header_link}    ${safari_page_section}
     When User Selects a Weekend Day
-    And User Selects Herbivore Tour Safari
+      And User Selects Herbivore Tour Safari
     Then Add Safari To Cart
-    And User Accepts the Alert 
-    And Checkout
+      And User Accepts the Alert
+      And Checkout
+
+
+
+    
+

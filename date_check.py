@@ -15,7 +15,7 @@ def get_weekday():
         # Saturday (5) -> add 2 days, Sunday (6) -> add 1 day.
         days_to_add = 7 - today.weekday()
         next_weekday = today + timedelta(days=days_to_add)
-    return next_weekday.strftime("%m/%d/%Y")
+    return next_weekday.strftime("%Y-%m-%d")
 
 def get_weekend():
 
@@ -26,6 +26,5 @@ def get_weekend():
     else:
         days_to_add = 5 - today.weekday()
         weekend_day = today + timedelta(days=days_to_add)
-    return weekend_day.strftime("%m/%d/%Y")
-
+    return weekend_day.strftime("%Y-%m-%d")
 

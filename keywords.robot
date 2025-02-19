@@ -14,6 +14,8 @@ Open Browser To Page
     Open Browser    ${url}    ${browser}    options=add_argument("--incognito")
     Maximize Browser Window
     Title Should Be    ${title}
+
+
     Sleep    3s
 # ------------------------
 # User Registration
@@ -49,21 +51,47 @@ Message visibility and validation
 
 User Is Registered And Logged In    
     [Tags]   Henrik Bergman, Sjubaib
-    [Arguments]    ${valid_username}    ${valid_password}    ${username_element}    ${password_element}    ${login_button}
+    [Arguments]    ${valid_username}    ${valid_password}    ${username_element}    ${password_element}    ${login_button}    ${home_page_section}
+    Open Browser To Page    ${url}    ${browser}    ${title}  
     Register New User   ${valid_username}   ${valid_password}
+
+    Open Login Section    ${login_header_button}    ${login_section}
     Valid Login    ${valid_username}    ${valid_password}    ${username_element}    ${password_element}    ${login_button}    ${home_page_section}
 
 
 # ------------------------
 # Tickets
 # ------------------------
+Navigate TO Buy Tickets Page
+    [Tags]    Abdirahman Bayle
+    [Arguments]    ${buy_tickets}    ${tickets_page}    
+    Click Link     ${buy_tickets}    
+    Wait Until Page Contains Element   ${tickets_page}    timeout= 10s
+    
+Choose Type, Category and Quantity
+    [Tags]    Abdirahman Bayle
+    [Arguments]    ${type_age}    ${type_category}    ${quantity}    ${quantity_num}    ${age}    ${ticket}
+    Select From List By Value    ${type_age}    ${age}     
+    Select From List By Value    ${type_category}    ${ticket}
+    Input Text    ${quantity}    ${quantity_num}
+
+Click Add To Cart
+    [Tags]    Abdirahman Bayle
+    [Arguments]    ${add_cart}    
+    Click Button    ${add_cart}
+
+    
+    
 Regular Adult Ticket Is In Cart
     [Tags]    Henrik Bergman
     [Arguments]
 
 User has 2 Adult and 2 Child VIP Tickets in Cart
-    [Tags]   Sjubaib
-    [Arguments]    
+    [Tags]    Sjubaib
+
+    Navigate TO Buy Tickets Page    ${buy_tickets}    ${tickets_page}
+    Choose Type, Category and Quantity   ${type_age}    ${type_category}    ${quantity}    2    Adult    VIP
+    Click Add To Cart   ${Add_cart}     
 
 
 # ------------------------
@@ -76,46 +104,54 @@ Weekday Is Selected In Calender
     Input Text    ${date_input_element}    ${weekday_user_input} 
 
 User Selects a Weekend Day
-    [Tags]   Sjubaib
-    [Arguments]     
-
+    [Tags]    Sjubaib
+    Input Text    ${date_input_element}    ${weekend_user_input} 
+    
 
 # ------------------------
 # Safari
 # ------------------------
 Safari Page Is Open
     [Tags]    Henrik Bergman
-    [Arguments]    ${url}    ${browser}    ${title}    ${safari_header_link}    ${safari_page_section}
-    Open Browser To Page    ${url}    ${browser}    ${title}
+    [Arguments]     ${safari_header_link}    ${safari_page_section}
+   # Open Browser To Page    ${url}    ${browser}    ${title}
     Click Link    ${safari_header_link}
     Wait Until Element Is Visible    ${safari_page_section}
 
 Herbivore Tour Safari Is Selected
     [Tags]    Henrik Bergman
-    [Arguments]
+    [Arguments] 
 
 
 T-Rex Rumble Safari Is Selected
     [Tags]    Henrik Bergman
     [Arguments]
 
+User Selects Herbivore Tour Safari
+    [Tags]    Sjubaib
+    Select From List By Value    ${safari_type_element}   ${Herbivore_Tour_Value}
 
 Add Safari To Cart
-    [Tags]    Henrik Bergman
-    [Arguments]
-
+    [Tags]    Henrik Bergman, Sjubaib
+    Click Button    ${safari_button} 
+    
 
 # ------------------------
 # Accept Alert
 # ------------------------
 User Accepts the Alert 
     [Tags]   Sjubaib
-    [Arguments] 
+    Handle Alert   action=ACCEPT
+
 
 # ------------------------
 # Checkout
 # ------------------------
 Checkout
-    [Tags]    Henrik Bergman
-    [Arguments]
+    [Tags]    Henrik Bergman, Sjubaib
+    Click Element   ${checkout_header_element}
+    Wait Until Element Is Visible    ${checkout_page_section}    10 
+    Click Button    ${checkout_button}
+    User Accepts the Alert
+    
 
