@@ -12,7 +12,7 @@ Test Teardown    Close Browser
 # ------------------------
 Test Valid User Registration
    [Tags]   Sjubaib
-   Open Browser To Page   ${url}  ${browser}   ${title}
+   Open Browser To Incognito Page   ${url}  ${browser}   ${title}
    Register New User   ${valid_username}   ${valid_password}
    Message visibility and validation  ${register_message}   ${registration_success_message}   10 
 
@@ -45,7 +45,7 @@ Valid Login Test
 
 Valid Registration and Login Test
     [Tags]    Henrik Bergman, Sjubaib
-    Open Browser To Page   ${url}  ${browser}   ${title}    
+    Open Browser To Incognito Page   ${url}  ${browser}   ${title}    
     Register New User    ${valid_username}    ${valid_password}
     Message visibility and validation   ${register_message}   ${registration_success_message}   10  
 

@@ -8,15 +8,22 @@ Variables    variables.py
 # ------------------------
 # Open Browser
 # ------------------------
-Open Browser To Page
+Open Browser To Incognito Page
     [Tags]    Henrik Bergman
     [Arguments]    ${url}    ${browser}    ${title}
     Open Browser    ${url}    ${browser}    options=add_argument("--incognito")
     Maximize Browser Window
     Title Should Be    ${title}
-
-
     Sleep    3s
+
+Open Browser To Page
+    [Tags]    Henrik Bergman
+    [Arguments]    ${url}    ${browser}    ${title}
+    Open Browser    ${url}    ${browser}
+    Maximize Browser Window
+    Title Should Be    ${title}
+    Sleep    3s
+
 # ------------------------
 # User Registration
 # ------------------------
