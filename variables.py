@@ -1,6 +1,5 @@
 import os
 from date_check import get_weekday, get_weekend
-
 current_directory = os.getcwd().replace('\\', '/')
 
 #browser
@@ -60,6 +59,26 @@ home_page_section = "id=home-section"
 # Header elements
 login_header_button = "xpath=//a[@data-section='login-section']"
 
+#Ticket page
+tickets_page = "id=ticket-form"
+#Ticket form
+buy_tickets = "Buy Tickets"
+
+#Ticket List
+type_age = "id=ticket-type"
+type_category = "id=ticket-category"
+
+#Qantity
+quantity = "id=ticket-quantity"
+
+# Add to cart button
+Add_cart = "Add to Cart"
+
+# Tickets confirmed
+page_contains = "Tickets added to cart"
+
+
+
 #endregion
 
 #region Safari Booking & Calender elements
@@ -77,45 +96,25 @@ safari_page_section = "id=safari-section"
 
 safari_header_link = 'xpath=//*[@id="safari-nav"]/a'
 
-safari_button = '//*[@id="safari-form"]/button'
+safari_dropdown_element = "id=safari-type"
 
-# Safari Type elements & Values
-safari_type_element = "id=safari-type"
+herbivore_tour_option = 'Herbivore Tour'
 
-Herbivore_Tour_Value = "Herbivore Tour"
-TRex_Rumble_Value =  "T-Rex Rumble"
-Herbivore_Tour_with_Feeding_Value = "Herbivore Tour with Feeding"
-TRex_Rumble_eXtreme_TPack_Value = "T-Rex Rumble eXtreme Thrill Pack"
+herbivore_tour_with_feeding_option = "Herbivore Tour with Feeding"
 
-
-#Ticket page
-tickets_page = "id=ticket-form"
-
-#Ticket form
-buy_tickets = "Buy Tickets"
-
-#Ticket List
-type_age = "id=ticket-type"
-type_category = "id=ticket-category"
-
-#Qantity
-quantity = "id=ticket-quantity"
-
-# Add to cart button
-Add_cart = "Add to Cart"
-
-# Tickets confirmed
-page_contains = "Item added to cart!"
-
-print(get_weekday)
-
-# Checkout page elements
-checkout_header_element = "id=cart-nav"
-checkout_page_section = "id=cart-section"
-
-checkout_button = "id=checkout-button"
-
-
+submit_safari_button = 'xpath=//*[@id="safari-form"]/button'
 #endregion
 
 
+
+# Checkout page
+
+checkout_header_link = 'xpath=//*[@id="cart-nav"]/a'
+
+checkout_page_section = "id=cart-section"
+
+checkout_total_cost_element = "id=cart-total"
+
+checkout_submit_button = "id=checkout-button"
+
+checkout_item_list = "id=cart-details"
