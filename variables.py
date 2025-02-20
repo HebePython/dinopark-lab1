@@ -78,9 +78,6 @@ Add_cart = "Add to Cart"
 page_contains = "Tickets added to cart"
 
 
-
-
-
 #endregion
 
 #region Safari Booking & Calender elements
@@ -102,6 +99,8 @@ safari_dropdown_element = "id=safari-type"
 
 herbivore_tour_option = 'Herbivore Tour'
 
+herbivore_tour_with_feeding_option = "Herbivore Tour with Feeding"
+
 submit_safari_button = 'xpath=//*[@id="safari-form"]/button'
 #endregion
 
@@ -118,3 +117,4 @@ checkout_total_cost_element = "id=cart-total"
 checkout_submit_button = "id=checkout-button"
 
 checkout_item_list = "id=cart-details"
+
