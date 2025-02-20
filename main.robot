@@ -6,6 +6,7 @@ Variables    variables.py
 Test Teardown    Close Browser
 
 
+
 *** Test Cases ***
 # ------------------------
 # Registration Tests
@@ -71,7 +72,6 @@ Book Herbivore and T-rex Rumble Safari Weekday
     When Herbivore Tour and T-rex Rumble Safari Is Added To Cart    ${safari_dropdown_element}    ${submit_safari_button}    ${weekday_user_input}    ${date_input_element}
     Then Checkout Should Be Successful  ${checkout_header_link}   ${checkout_page_section}    ${checkout_total_cost_element}    Total: $320    ${checkout_submit_button}
 
-
 Test Book Herbivore Safari with Feeding on Weekend
    [Tags]   Sjubaib Rifai
     Given User is Registered and Logged In   ${valid_username}    ${valid_password}   ${username_element}    ${password_element}    ${login_button}   ${home_page_section}
@@ -81,8 +81,4 @@ Test Book Herbivore Safari with Feeding on Weekend
       And User Selects Herbivore Tour with Feeding
     Then Safari Should Be Added to Cart    ${submit_safari_button}
       And Checkout Should Be Successful   ${checkout_header_link}   ${checkout_page_section}    ${checkout_total_cost_element}    Total: $500    ${checkout_submit_button}
-
-
-
-    
 

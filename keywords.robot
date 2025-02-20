@@ -8,13 +8,22 @@ Variables    variables.py
 # ------------------------
 # Open Browser
 # ------------------------
-Open Browser To Page
+Open Browser To Incognito Page
     [Tags]    Henrik Bergman
     [Arguments]    ${url}    ${browser}    ${title}
     Open Browser    ${url}    ${browser}    options=add_argument("--incognito")
     Maximize Browser Window
     Title Should Be    ${title}
     Sleep    3s
+
+Open Browser To Page
+    [Tags]    Henrik Bergman
+    [Arguments]    ${url}    ${browser}    ${title}
+    Open Browser    ${url}    ${browser}
+    Maximize Browser Window
+    Title Should Be    ${title}
+    Sleep    3s
+
 # ------------------------
 # User Registration
 # ------------------------
@@ -73,9 +82,11 @@ Choose Type, Category and Quantity
 
 Click Add To Cart
     [Tags]    Abdirahman Bayle
+
     [Arguments]    ${add_cart} 
     Click Button    ${add_cart}
     Alert Text Should Be    Item added to cart!
+
     
 Regular Adult Ticket Is In Cart
     [Tags]    Henrik Bergman
@@ -95,7 +106,7 @@ User has 2 Adult and 2 Child VIP Tickets in Cart
     Navigate TO Buy Tickets Page    ${buy_tickets}    ${tickets_page}
     Choose Vip Ticket and Add to Cart   Adult   2   
     Choose Vip Ticket and Add to Cart   Child   2
-
+    
 # ------------------------
 # Pick Date
 # ------------------------
@@ -129,7 +140,6 @@ Herbivore Tour and T-Rex Rumble Safari Is Added To Cart
     Select From List By Label    ${safari_dropdown_element}    T-Rex Rumble
     Safari Should Be Added to Cart    ${submit_safari_button}
 
-
 User Selects Herbivore Tour with Feeding
     [Tags]    Sjubaib Rifai
     Select From List By Value    ${safari_dropdown_element}   ${herbivore_tour_with_feeding_option}
@@ -139,7 +149,6 @@ Safari Should Be Added to Cart
     [Arguments]    ${submit_safari_button}
     Click Button    ${submit_safari_button}
     Alert Text Should Be    Item added to cart!
-
 
 # ------------------------
 # Handle Alerts 
@@ -161,4 +170,3 @@ Checkout Should Be Successful
     Element Text Should Be    ${checkout_total_cost_element}    ${total_value_cost}
     Click Button    ${checkout_submit_button}
     Handle Alert
-

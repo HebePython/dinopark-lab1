@@ -78,7 +78,6 @@ Add_cart = "Add to Cart"
 page_contains = "Tickets added to cart"
 
 
-
 #endregion
 
 #region Safari Booking & Calender elements
@@ -118,3 +117,4 @@ checkout_total_cost_element = "id=cart-total"
 checkout_submit_button = "id=checkout-button"
 
 checkout_item_list = "id=cart-details"
+
