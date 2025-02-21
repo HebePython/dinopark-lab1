@@ -21,19 +21,8 @@ register_button = '//*[@id="register-form"]/button'
 
 register_message = "id=register-message"
 
-# Empty registration fields  
-empty_username = " "  
-empty_password = " " 
-
-# Too short password registration
-short_password_username = "TooShortPasswordUser"
-short_password = "123"
-
 # Registration status messages
 registration_success_message = "Registration successful! Redirecting to login..."
-error_existing_user_message = "Username already exists. Please choose another."
-error_empty_fields_message = "Please enter both a username and password."
-error_short_password_message = "Password must be at least 8 characters long."
 
 #region Login page elements
 

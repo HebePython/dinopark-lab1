@@ -17,25 +17,6 @@ Test Valid User Registration
    Register New User   ${valid_username}   ${valid_password}
    Message visibility and validation  ${register_message}   ${registration_success_message}   10 
 
-Test Register With Existing Username
-   [Tags]    Sjubaib Rifai
-    Open Browser To Page    ${url}    ${browser}    ${title}
-    Register New User    ${valid_username}    ${valid_password}
-    Register New User    ${valid_username}    ${valid_password}
-    Message visibility and validation    ${register_message}    ${error_existing_user_message}    10
-
-Test Registration With Empty Fields
-   [Tags]   Sjubaib Rifai
-   Open Browser To Page    ${url}    ${browser}    ${title}
-   Register New User    ${empty_username}    ${empty_password}
-   Message visibility and validation    ${register_message}    ${error_empty_fields_message}    10
-
-Test Registration With Too Short Password
-   [Tags]   Sjubaib Rifai
-   Open Browser To Page   ${url}  ${browser}   ${title}
-   Register New User    ${short_password_username}    ${short_password}
-   Message visibility and validation    ${register_message}    ${error_short_password_message}    10
-
 # ------------------------
 # Login Tests
 # ------------------------

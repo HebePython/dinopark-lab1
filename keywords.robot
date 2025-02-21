@@ -30,26 +30,11 @@ Open Browser To Page
 Register New User
     [Tags]   Sjubaib Rifai
     [Arguments]    ${username}    ${password}
-    Click Navigation Element   ${register_navigation_Element}
-    Type Text  ${username_input_id}    ${username}
-    Type Text   ${password_input_id}    ${password}
-    Click Submit Button    ${register_button}
-
-Type Text
-    [Tags]   Sjubaib Rifai
-    [Arguments]    ${element}    ${text}
-    Input Text    ${element}    ${text}
-
-Click Submit Button
-   [Tags]   Sjubaib Rifai
-   [Arguments]  ${Submit_Button_to_click}  
-   Click Button   ${Submit_Button_to_click}
-
-Click Navigation Element
-   [Tags]   Sjubaib Rifai
-   [Arguments]   ${Element_to_click}
-   Click Element   ${Element_to_click}
-   
+    Click Element   ${register_navigation_Element}
+    Input Text  ${username_input_id}    ${username}
+    Input Text   ${password_input_id}    ${password}
+    Click Button    ${register_button}
+    
 Message visibility and validation
    [Tags]   Sjubaib Rifai
    [Arguments]    ${message_Element}    ${messageText}    ${timeout}
@@ -82,7 +67,6 @@ Choose Type, Category and Quantity
 
 Click Add To Cart
     [Tags]    Abdirahman Bayle
-
     [Arguments]    ${add_cart} 
     Click Button    ${add_cart}
     Alert Text Should Be    Item added to cart!
