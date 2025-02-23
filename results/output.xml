@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2 (Python 3.13.1 on win32)" generated="2025-02-23T16:10:08.447374" rpa="false" schemaversion="5">
+<suite id="s1" name="Dinopark-Lab1" source="C:\Mjukvarutestare Utbildning\Testautomation för Continuous Testing\dinopark-lab1\dinopark-lab1">
+<suite id="s1-s1" name="VG Del main" source="C:\Mjukvarutestare Utbildning\Testautomation för Continuous Testing\dinopark-lab1\dinopark-lab1\VG_Del_main.robot">
+<test id="s1-s1-t1" name="Login With Unregistered Username" line="37">
+<kw name="Given User is on the login page" owner="VG_Del_keywords">
+<kw name="Open Browser To Page" owner="VG_Del_keywords">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-02-23T16:10:08.836059" level="INFO">Opening browser 'chrome' to base url 'file:///C:/Mjukvarutestare Utbildning/Testautomation för Continuous Testing/dinopark-lab1/dinopark-lab1/webpages/jurap.html'.</msg>
+<msg time="2025-02-23T16:10:09.326063" level="WARN">The chromedriver version (132.0.6834.110) detected in PATH at C:\Users\sjuba\Webdriver\chromedriver.exe might not be compatible with the detected chrome version (133.0.6943.127); currently, chromedriver 133.0.6943.126 is recommended for chrome 133.*, so it is advised to delete the driver in PATH and retry</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-02-23T16:10:08.835582" elapsed="1.900601"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-02-23T16:10:10.736468" elapsed="0.037812"/>
+</kw>
+<kw name="Title Should Be" owner="SeleniumLibrary">
+<msg time="2025-02-23T16:10:10.783287" level="INFO">Page title is 'Jura-Stina-Kalle Park'.</msg>
+<arg>${title}</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<status status="PASS" start="2025-02-23T16:10:10.774693" elapsed="0.009089"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-02-23T16:10:12.785009" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-02-23T16:10:10.784088" elapsed="2.001530"/>
+</kw>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<arg>${title}</arg>
+<status status="PASS" start="2025-02-23T16:10:08.835018" elapsed="3.950827"/>
+</kw>
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2025-02-23T16:10:12.786909" level="INFO">Clicking link '//*[@id="login-nav"]/a'.</msg>
+<arg>${login_link_element}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-23T16:10:12.786060" elapsed="0.139085"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${login_page_section}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-02-23T16:10:12.925487" elapsed="0.051423"/>
+</kw>
+<status status="PASS" start="2025-02-23T16:10:08.831501" elapsed="4.145730"/>
+</kw>
+<kw name="When User enters an unregistered username" owner="VG_Del_keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-02-23T16:10:12.984372" level="INFO">Typing text 'Unregistered' into text field 'id=login-username'.</msg>
+<arg>${username_login_element}</arg>
+<arg>${unregistered_username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-23T16:10:12.983851" elapsed="0.164614"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-02-23T16:10:13.149804" level="INFO">Typing text '12345678' into text field 'id=login-password'.</msg>
+<arg>${password_login_element}</arg>
+<arg>${valid_password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-23T16:10:13.149308" elapsed="0.137340"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-02-23T16:10:13.287306" level="INFO">Clicking button '//*[@id="login-form"]/button'.</msg>
+<arg>${login_button}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-23T16:10:13.286895" elapsed="0.118867"/>
+</kw>
+<status status="PASS" start="2025-02-23T16:10:12.980926" elapsed="0.425309"/>
+</kw>
+<kw name="Then System should display an error message: &quot;Invalid username or password.&quot;" owner="VG_Del_keywords">
+<kw name="Wait Until Element Contains" owner="SeleniumLibrary">
+<arg>${login_message_element}</arg>
+<arg>Verifying credentials...</arg>
+<arg>5</arg>
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<status status="PASS" start="2025-02-23T16:10:13.411005" elapsed="0.051689"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Element Should Contain" owner="SeleniumLibrary">
+<msg time="2025-02-23T16:10:13.642680" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-26.png"&gt;&lt;img src="selenium-screenshot-26.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-02-23T16:10:13.643349" level="FAIL">Element 'id=login-message' should have contained text 'Invalid username or password.' but its text was 'Verifying credentials...'.</msg>
+<arg>${login_message_element}</arg>
+<arg>${error_invalid_login_message}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="FAIL" start="2025-02-23T16:10:13.463934" elapsed="0.183607">Element 'id=login-message' should have contained text 'Invalid username or password.' but its text was 'Verifying credentials...'.</status>
+</kw>
+<kw name="Element Should Contain" owner="SeleniumLibrary">
+<msg time="2025-02-23T16:10:14.787479" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-27.png"&gt;&lt;img src="selenium-screenshot-27.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-02-23T16:10:14.788363" level="FAIL">Element 'id=login-message' should have contained text 'Invalid username or password.' but its text was 'Verifying credentials...'.</msg>
+<arg>${login_message_element}</arg>
+<arg>${error_invalid_login_message}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="FAIL" start="2025-02-23T16:10:14.648828" elapsed="0.142616">Element 'id=login-message' should have contained text 'Invalid username or password.' but its text was 'Verifying credentials...'.</status>
+</kw>
+<kw name="Element Should Contain" owner="SeleniumLibrary">
+<msg time="2025-02-23T16:10:15.830297" level="INFO">Element 'id=login-message' contains text 'Invalid username or password.'.</msg>
+<arg>${login_message_element}</arg>
+<arg>${error_invalid_login_message}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="PASS" start="2025-02-23T16:10:15.792635" elapsed="0.038521"/>
+</kw>
+<arg>5</arg>
+<arg>1</arg>
+<arg>Element Should Contain</arg>
+<arg>${login_message_element}</arg>
+<arg>${error_invalid_login_message}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2025-02-23T16:10:13.463282" elapsed="2.368393"/>
+</kw>
+<status status="PASS" start="2025-02-23T16:10:13.408886" elapsed="2.423215"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-02-23T16:10:15.837570" elapsed="2.504672"/>
+</kw>
+<doc>Verifies that login fails for an unregistered username.</doc>
+<tag>Login</tag>
+<tag>Negative</tag>
+<tag>Validation</tag>
+<status status="PASS" start="2025-02-23T16:10:08.829784" elapsed="9.513816"/>
+</test>
+<doc>Grupp 1, Sjubaib - VG_Del
+Testar ogiltig registrering och inloggning för att verifiera systemets felhantering.
+  - Registrering: Nekad vid för kort lösenord samt redan existerande användare.
+  - Inloggning: Nekad vid felaktigt lösenord samt oregistrerad användare.</doc>
+<status status="PASS" start="2025-02-23T16:10:08.480553" elapsed="9.867288"/>
+</suite>
+<status status="PASS" start="2025-02-23T16:10:08.453246" elapsed="9.901590"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">Login</stat>
+<stat pass="1" fail="0" skip="0">Negative</stat>
+<stat pass="1" fail="0" skip="0">Validation</stat>
+</tag>
+<suite>
+<stat name="Dinopark-Lab1" id="s1" pass="1" fail="0" skip="0">Dinopark-Lab1</stat>
+<stat name="VG Del main" id="s1-s1" pass="1" fail="0" skip="0">Dinopark-Lab1.VG Del main</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2025-02-23T16:10:09.326063" level="WARN">The chromedriver version (132.0.6834.110) detected in PATH at C:\Users\sjuba\Webdriver\chromedriver.exe might not be compatible with the detected chrome version (133.0.6943.127); currently, chromedriver 133.0.6943.126 is recommended for chrome 133.*, so it is advised to delete the driver in PATH and retry</msg>
+</errors>
+</robot>
