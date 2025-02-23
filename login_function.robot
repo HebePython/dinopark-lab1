@@ -10,6 +10,7 @@ Valid Login
     Input Text    ${username_element}   ${valid_username} 
     Input Text    ${password_element}    ${valid_password}  
     Click Button    ${login_button}
+    Sleep    5
     Wait Until Element Is Visible    ${home_page_section}
     sleep     5s
 
