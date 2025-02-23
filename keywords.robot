@@ -146,6 +146,21 @@ Checkout
     Click Button    ${checkout_submit_button}
     Handle Alert
 
+User Sees Price
+    [Tags]      Abdirahman Bayle
+    [Arguments]    ${checkout_page_section}    ${checkout_total_cost_element}    ${total_value_cost}
+    Wait Until Element Is Visible    ${checkout_page_section}
+    Element Text Should Be    ${checkout_total_cost_element}    ${total_value_cost}
+    
+
+User Clicks Cart
+    [Tags]     Abdirahman Bayle
+    [Arguments]   ${checkout_header_link}
+    Click Link    ${checkout_header_link}
+    
+    
+    
+ 
 # ------------------------
 # Handle Alerts 
 # ------------------------
