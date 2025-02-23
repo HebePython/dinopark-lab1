@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2 (Python 3.13.1 on win32)" generated="2025-02-20T12:40:28.415640" rpa="false" schemaversion="5">
+<suite id="s1" name="Dinopark-Lab1" source="C:\Mjukvarutestare Utbildning\Testautomation för Continuous Testing\dinopark-lab1\dinopark-lab1">
+<suite id="s1-s1" name="Main" source="C:\Mjukvarutestare Utbildning\Testautomation för Continuous Testing\dinopark-lab1\dinopark-lab1\main.robot">
+<test id="s1-s1-t1" name="Valid Login Test" line="41">
+<kw name="Open Browser To Login Page" owner="login_function">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-02-20T12:40:28.685991" level="INFO">Opening browser 'chrome' to base url 'file:///C:/Mjukvarutestare Utbildning/Testautomation för Continuous Testing/dinopark-lab1/dinopark-lab1/webpages/jurap.html'.</msg>
+<msg time="2025-02-20T12:40:29.035968" level="WARN">The chromedriver version (132.0.6834.110) detected in PATH at C:\Users\sjuba\Webdriver\chromedriver.exe might not be compatible with the detected chrome version (133.0.6943.99); currently, chromedriver 133.0.6943.126 is recommended for chrome 133.*, so it is advised to delete the driver in PATH and retry</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-02-20T12:40:28.685615" elapsed="1.715141"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-02-20T12:40:30.401056" elapsed="0.027680"/>
+</kw>
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2025-02-20T12:40:30.429399" level="INFO">Clicking link 'xpath=//a[@data-section='login-section']'.</msg>
+<arg>${login_header_button}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-20T12:40:30.428953" elapsed="0.084870"/>
+</kw>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<arg>${title}</arg>
+<arg>${login_header_button}</arg>
+<tag>Henrik Bergman</tag>
+<status status="PASS" start="2025-02-20T12:40:28.684699" elapsed="1.829364"/>
+</kw>
+<kw name="Valid Login" owner="login_function">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-02-20T12:40:30.515766" level="INFO">Typing text 'test1' into text field 'id=login-username'.</msg>
+<arg>${username_element}</arg>
+<arg>${valid_username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-20T12:40:30.515363" elapsed="0.090768"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-02-20T12:40:30.606718" level="INFO">Typing text '123123123' into text field 'id=login-password'.</msg>
+<arg>${password_element}</arg>
+<arg>${valid_password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-20T12:40:30.606356" elapsed="0.060139"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-02-20T12:40:30.667005" level="INFO">Clicking button 'xpath=//button[text()='Login']'.</msg>
+<arg>${login_button}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-20T12:40:30.666693" elapsed="0.052369"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-02-20T12:40:35.719840" level="INFO">Slept 5 seconds.</msg>
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-02-20T12:40:30.719274" elapsed="5.001092"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<msg time="2025-02-20T12:40:40.975922" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-38.png"&gt;&lt;img src="selenium-screenshot-38.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-02-20T12:40:40.976601" level="FAIL">Element 'id=home-section' not visible after 5 seconds.</msg>
+<arg>${home_page_section}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="FAIL" start="2025-02-20T12:40:35.720569" elapsed="5.259219">Element 'id=home-section' not visible after 5 seconds.</status>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2025-02-20T12:40:40.980145" elapsed="0.000205"/>
+</kw>
+<arg>${valid_username}</arg>
+<arg>${valid_password}</arg>
+<arg>${username_element}</arg>
+<arg>${password_element}</arg>
+<arg>${login_button}</arg>
+<arg>${home_page_section}</arg>
+<tag>Henrik Bergman</tag>
+<status status="FAIL" start="2025-02-20T12:40:30.514638" elapsed="10.465940">Element 'id=home-section' not visible after 5 seconds.</status>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-02-20T12:40:40.981060" elapsed="2.261747"/>
+</kw>
+<tag>Henrik Bergman</tag>
+<status status="FAIL" start="2025-02-20T12:40:28.683664" elapsed="14.560050">Element 'id=home-section' not visible after 5 seconds.</status>
+</test>
+<doc>Robot lab 1, Grupp 1.     Abdirahman Bayle, Sjubaib Rifai, Henrik Bergman</doc>
+<status status="FAIL" start="2025-02-20T12:40:28.437643" elapsed="14.809567"/>
+</suite>
+<status status="FAIL" start="2025-02-20T12:40:28.418894" elapsed="14.830902"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">Henrik Bergman</stat>
+</tag>
+<suite>
+<stat name="Dinopark-Lab1" id="s1" pass="0" fail="1" skip="0">Dinopark-Lab1</stat>
+<stat name="Main" id="s1-s1" pass="0" fail="1" skip="0">Dinopark-Lab1.Main</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2025-02-20T12:40:29.035968" level="WARN">The chromedriver version (132.0.6834.110) detected in PATH at C:\Users\sjuba\Webdriver\chromedriver.exe might not be compatible with the detected chrome version (133.0.6943.99); currently, chromedriver 133.0.6943.126 is recommended for chrome 133.*, so it is advised to delete the driver in PATH and retry</msg>
+</errors>
+</robot>
