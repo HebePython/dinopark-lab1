@@ -8,13 +8,15 @@ Test Teardown    Close Browser
 *** Test Cases ***
 Valid Regular And VIP Tickets
     [Tags]    Henrik Bergman
+    [Documentation]    Feature: Olika biljett typer    
     Given User Is Registered And Logged In    ${valid_username}    ${valid_password}    ${username_element}    ${password_element}    ${login_button}    ${home_page_section}
     When Ticket Page Is Open    ${ticket_navigation_link}    ${ticket_page_section}   
     Then I Can Add Adult, Senior And Child Regular Tickets To Cart As Both VIP And Regular     ${ticket_type_HB}    ${ticket_category_HB}    ${ticket_type_list_element_HB}    ${ticket_category_list_element_HB}    ${add_cart_button_HB} 
 
 
-Valid VIP Tickets
+Invalid Ticket Quantity
     [Tags]    Henrik Bergman
+    [Documentation]    Feature: Olika biljett typer    
     Given User Is Registered And Logged In    ${valid_username}    ${valid_password}    ${username_element}    ${password_element}    ${login_button}    ${home_page_section}
     When Ticket Page Is Open    ${ticket_navigation_link}    ${ticket_page_section}   
     Then I Cannot Buy Zero Or Negative Amount Of Tickets    ${ticket_input_list}    ${ticket_quantity_text_field}    ${add_cart_button_HB}
