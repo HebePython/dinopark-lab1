@@ -170,3 +170,9 @@ Checkout Should Be Successful
     Element Text Should Be    ${checkout_total_cost_element}    ${total_value_cost}
     Click Button    ${checkout_submit_button}
     Handle Alert
+
+
+# ------------------------
+# Henrik VG Del
+# ------------------------
+

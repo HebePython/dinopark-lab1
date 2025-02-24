@@ -1,6 +1,17 @@
+import locale
 from datetime import date, timedelta
 
 # Disclaimer, these have been prompted using Copilot AI.
+def get_date_format():
+    """
+    Determine the date format based on the system's locale.
+    Returns the date format string.
+    """
+    loc = locale.getdefaultlocale()[0]
+    if loc == 'sv_SE':
+        return "%Y-%m-%d"  # Swedish format
+    else:
+        return "%m/%d/%Y"  # Default to US format
 
 def get_weekday():
     """
@@ -15,7 +26,8 @@ def get_weekday():
         # Saturday (5) -> add 2 days, Sunday (6) -> add 1 day.
         days_to_add = 7 - today.weekday()
         next_weekday = today + timedelta(days=days_to_add)
-    return next_weekday.strftime("%Y-%m-%d")
+    date_format = get_date_format()
+    return next_weekday.strftime(date_format)
 
 def get_weekend():
 
@@ -26,5 +38,6 @@ def get_weekend():
     else:
         days_to_add = 5 - today.weekday()
         weekend_day = today + timedelta(days=days_to_add)
-    return weekend_day.strftime("%Y-%m-%d")
+    date_format = get_date_format()
+    return weekend_day.strftime(date_format)
 
