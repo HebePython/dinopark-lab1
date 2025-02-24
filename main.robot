@@ -8,26 +8,6 @@ Test Teardown    Close Browser
 
 *** Test Cases ***
 # ------------------------
-# Registration Tests
-# ------------------------
-Test Valid User Registration
-   [Tags]   Sjubaib Rifai
-   Register New User   ${valid_username}   ${valid_password}
-   Message visibility and validation  ${register_message}   ${registration_success_message}   10 
-
-# ------------------------
-# Login Tests
-# ------------------------
-
-Valid Registration and Login Test   
-    [Tags]    Henrik Bergman, Sjubaib Rifai
-    Register New User    ${valid_username}    ${valid_password}
-    Valid Login    ${valid_username}    ${valid_password}    ${username_element}    ${password_element}    ${login_button}    ${home_page_section}
-
-
-
-
-# ------------------------
 # Safari Booking Tests
 # ------------------------
 Book Herbivore and T-rex Rumble Safari Weekday
@@ -49,19 +29,6 @@ Test Book Herbivore Safari with Feeding on Weekend
       And User Selects Herbivore Tour with Feeding
     Then Safari Should Be Added to Cart    ${submit_safari_button}
       And Checkout Should Be Successful   ${checkout_header_link}   ${checkout_page_section}    ${checkout_total_cost_element}    Total: $500    ${checkout_submit_button}
-
-
-
-# ------------------------
-# Ticket Test
-# ------------------------
-
-Valid Buy Ticket Test
-    [Tags]    Abdirahman Bayle
-    User Is Registered And Logged In     ${valid_username}    ${valid_password}    ${username_element}    ${password_element}    ${login_button}    ${home_page_section}
-    Navigate TO Buy Tickets Page    ${buy_tickets}    ${tickets_page}   
-    Choose Type, Category and Quantity    ${type_age}   ${type_category}    ${quantity}    5    Child    VIP
-    Click Add To Cart    ${add_cart}
 
 
 
