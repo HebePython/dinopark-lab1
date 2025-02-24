@@ -26,15 +26,15 @@ Invalid Ticket Quantity
 Valid Cart Prices
     [Tags]    Henrik Bergman
     Given User Is Registered And Logged In    ${valid_username}    ${valid_password}    ${username_element}    ${password_element}    ${login_button}    ${home_page_section}
-    And One Adult Ticket And Herbivore Safari Is In Cart    
-    When Cart Page Is Open
-    Then I Should See The Prices Of My Cart Items
+    And One Adult Ticket And Herbivore Safari Is Added To Cart     ${ticket_navigation_link}    ${ticket_page_section}    ${ticket_type_list_element_HB}    ${ticket_category_list_element_HB}    ${add_cart_button_HB}    ${weekday_user_input}    ${weekday_user_input}    ${date_input_element}    ${safari_dropdown_element}    ${submit_safari_button}       
+    When Cart Page Is Open    ${cart_navigation_link}    ${cart_section_element}
+    Then I Should See The Prices Of My Cart Items    ${checkout_cart_list_element}
 
 Valid Cart Prices Alert
     [Tags]    Henrik Bergman
     Given User Is Registered And Logged In    ${valid_username}    ${valid_password}    ${username_element}    ${password_element}    ${login_button}    ${home_page_section}
-    And One Adult Ticket And Herbivore Safari Is In Cart
-    When Cart Page Is Open
-    And I Press Proceed To Checkout
+    And One Adult Ticket And Herbivore Safari Is Added To Cart      ${ticket_navigation_link}    ${ticket_page_section}    ${ticket_type_list_element_HB}    ${ticket_category_list_element_HB}    ${add_cart_button_HB}    ${weekday_user_input}    ${weekday_user_input}    ${date_input_element}    ${safari_dropdown_element}    ${submit_safari_button}       
+    When Cart Page Is Open    ${cart_navigation_link}    ${cart_section_element}
+    And Press Proceed To Checkout    ${checkout_submit_button}
     Then I Should See The Prices Of My Cart Items In An Alert
 

@@ -168,6 +168,16 @@ Alert Text Should Contain
     ${alert_text}=     Handle Alert
     Should Contain    ${alert_text}    ${expected_alert_text}
 
+Alert Text Should Contain Multiple
+    [Tags]    Henrik Bergman VG
+    [Arguments]    
+    ${alert_text}=     Handle Alert
+    Should Contain    ${alert_text}    $50    
+    Should Contain    ${alert_text}    $120
+    Should Contain    ${alert_text}    $170   
+
+# Tickets, 1 & 2
+
 Ticket Page Is Open
     [Tags]    Henrik Bergman VG
     [Arguments]    ${ticket_navigation_link}    ${ticket_page_section}   
@@ -206,15 +216,58 @@ I Cannot Buy Zero Or Negative Amount Of Tickets
   
     END
 
+Total Cost Should Be Zero
+    [Tags]    Henrik Bergman VG
+    [Arguments]    ${checkout_total_cost_element}    ${amount_text}
+    Element Text Should Be    ${checkout_total_cost_element}    ${amount_text}
+    
+
+
+# CART & CHECKOUT 3 & 4
+
+Select Herbivore Safari
+    [Tags]    Henrik Bergman VG
+    [Arguments]    ${weekday_user_input}    ${weekday_user_input}    ${date_input_element}    ${safari_dropdown_element}    ${submit_safari_button}
+    Safari Page Is Open    ${safari_header_link}    ${safari_page_section}
+    Weekday Is Selected In Calender    ${weekday_user_input}    ${date_input_element}
+    Select From List By Label    ${safari_dropdown_element}    Herbivore Tour
+    Safari Should Be Added to Cart   ${submit_safari_button}
+
 Cart Page Is Open
     [Tags]    Henrik Bergman VG
     [Arguments]     ${cart_navigation_link}    ${cart_section_element}
     Click Link    ${cart_navigation_link}
     Element Should Be Visible    ${cart_section_element}
 
-
-Total Cost Should Be Zero
+Check Cart Items Price
     [Tags]    Henrik Bergman VG
-    [Arguments]    ${checkout_total_cost_element}    ${amount_text}
-    Element Text Should Be    ${checkout_total_cost_element}    ${amount_text}
-    
+    [Arguments]
+    FOR    ${list_item}    IN    ${checkout_cart_list_element}
+        ${price_listed}=    Get Text    ${list_item}
+        Should Contain    ${price_listed}    $50
+    END
+
+
+I Should See The Prices Of My Cart Items
+    [Tags]    Henrik Bergman VG
+    [Arguments]    ${checkout_cart_list_element}
+    ${text_item}=      Get Text    ${checkout_cart_list_element}
+    Should Contain    ${text_item}    $50
+    Should Contain    ${text_item}   $120
+
+One Adult Ticket And Herbivore Safari Is Added To Cart
+    [Tags]    Henrik Bergman VG
+    [Arguments]    ${ticket_navigation_link}    ${ticket_page_section}    ${ticket_type_list_element_HB}    ${ticket_category_list_element_HB}    ${add_cart_button_HB}    ${weekday_user_input}    ${weekday_user_input}    ${date_input_element}    ${safari_dropdown_element}    ${submit_safari_button}   
+    Ticket Page Is Open    ${ticket_navigation_link}    ${ticket_page_section}   
+    Select A Ticket    Adult    Regular    ${ticket_type_list_element_HB}    ${ticket_category_list_element_HB}    ${add_cart_button_HB}
+    Select Herbivore Safari    ${weekday_user_input}    ${weekday_user_input}    ${date_input_element}    ${safari_dropdown_element}    ${submit_safari_button}
+
+Press Proceed to Checkout
+    [Tags]    Henrik Bergman VG
+    [Arguments]    ${checkout_submit_button}
+    Click Button    ${checkout_submit_button}
+
+I Should See The Prices Of My Cart Items In An Alert
+    [Tags]    Henrik Bergman VG
+    [Arguments]
+    Alert Text Should Contain Multiple
