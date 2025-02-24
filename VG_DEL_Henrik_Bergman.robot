@@ -2,6 +2,7 @@
 Documentation    VG Del Henrik Bergman, Grupp 1. Features: Olika biljett typer & Checkout process priser.
 Library    SeleniumLibrary
 Resource    keywords.robot
+Test Setup   Open Browser To Page   ${url}  ${browser}   ${title}
 Test Teardown    Close Browser
 
 
