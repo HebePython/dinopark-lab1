@@ -124,3 +124,11 @@ checkout_item_list = "id=cart-details"
 
 checkout_cart_list_element = "id=cart-details"
 
+#Tickets
+
+ticket_type_HB = ["Adult", "Senior", "Child"]
+ticket_category_HB = ["Regular", "VIP"]
+ticket_type_list_element_HB = "id=ticket-type"
+ticket_category_list_element_HB = "id=ticket-category"
+add_cart_button_HB = "xpath=/html/body/main/article[4]/section/form/button"
+ticket_page_section = "id=ticket-form"

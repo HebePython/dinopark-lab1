@@ -175,9 +175,40 @@ Checkout Should Be Successful
 # ------------------------
 # Henrik VG Del
 # ------------------------
-
 Alert Text Should Contain
-    [Tags]    Henrik Bergman
+    [Tags]    Henrik Bergman VG
     [Arguments]    ${expected_alert_text}
     ${alert_text}=     Handle Alert
     Should Contain    ${alert_text}    ${expected_alert_text}
+
+
+Select A Ticket
+    [Tags]    Henrik Bergman VG
+    [Arguments]    ${ticket_type_HB}    ${ticket_category_HB}    ${ticket_type_list_element_HB}    ${ticket_category_list_element_HB}    ${add_cart_button_HB}
+    Select From List By Value    ${ticket_type_list_element_HB}    ${ticket_type_HB}
+    Select From List By Value    ${ticket_category_list_element_HB}    ${ticket_category_HB}
+    Click Button    ${add_cart_button_HB}
+    Alert Text Should Contain    Item added
+
+
+Ticket Page Is Open
+    [Tags]    Henrik Bergman VG
+    [Arguments]     
+
+
+
+
+Verify All Ticket Combinations Can Be Added To Cart
+    [Tags]    Henrik Bergman VG
+    [Documentation]    Verify that all combinations of ticket types and categories can be added to the cart.
+    [Arguments]    ${url}    ${browser}    ${title}     ${ticket_type_HB}    ${ticket_category_HB}    ${ticket_type_list_element_HB}    ${ticket_category_list_element_HB}    ${add_cart_button_HB}
+    FOR    ${ticket_type}    IN    @{ticket_type_HB}
+    User Is Registered And Logged In      ${valid_username}    ${valid_password}    ${username_element}    ${password_element}    ${login_button}    ${home_page_section}
+    Ticket Page Is Open    
+        FOR    ${ticket_category}    IN    @{ticket_category_HB}
+            Log    Adding ticket combination: ${ticket_type_HB} and ${ticket_category_HB}
+            Choose Type, Category and Quantity    ${ticket_type_HB}    ${type_category}    ${quantity}    1    ${ticket_type}    ${ticket_category}
+            Click Add To Cart    ${add_cart_button_HB}
+            Alert Text Should Contain   Item added
+        END
+    END
