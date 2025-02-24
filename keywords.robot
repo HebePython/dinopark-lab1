@@ -8,14 +8,6 @@ Variables    variables.py
 # ------------------------
 # Open Browser
 # ------------------------
-Open Browser To Incognito Page
-    [Tags]    Henrik Bergman
-    [Arguments]    ${url}    ${browser}    ${title}
-    Open Browser    ${url}    ${browser}    options=add_argument("--incognito")
-    Maximize Browser Window
-    Title Should Be    ${title}
-    Sleep    3s
-
 Open Browser To Page
     [Tags]    Henrik Bergman
     [Arguments]    ${url}    ${browser}    ${title}
@@ -30,7 +22,7 @@ Open Browser To Page
 Register New User
     [Tags]   Sjubaib Rifai
     [Arguments]    ${username}    ${password}
-    Click Element   ${register_navigation_Element}
+    Click Link   ${register_navigation_Element}
     Input Text  ${username_input_id}    ${username}
     Input Text   ${password_input_id}    ${password}
     Click Button    ${register_button}
@@ -44,7 +36,6 @@ Message visibility and validation
 User Is Registered And Logged In    
     [Tags]   Henrik Bergman, Sjubaib Rifai
     [Arguments]    ${valid_username}    ${valid_password}    ${username_element}    ${password_element}    ${login_button}    ${home_page_section}
-    Open Browser To Page    ${url}    ${browser}    ${title}  
     Register New User   ${valid_username}   ${valid_password}
     Open Login Section   ${login_header_button}    ${login_section}
     Valid Login    ${valid_username}    ${valid_password}    ${username_element}    ${password_element}    ${login_button}    ${home_page_section}
@@ -70,7 +61,6 @@ Click Add To Cart
     [Arguments]    ${add_cart} 
     Click Button    ${add_cart}
     Alert Text Should Be    Item added to cart!
-
     
 Regular Adult Ticket Is In Cart
     [Tags]    Henrik Bergman

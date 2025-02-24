@@ -12,7 +12,7 @@ url = f"file:///{current_directory}/webpages/jurap.html"
 title = "Jura-Stina-Kalle Park"
 
 # Registration navigation element
-register_navigation_Element = '//*[@id="register-nav"]'
+register_navigation_Element = '//*[@id="register-nav"]/a'
 
 # User-registration page Elements
 username_input_id = "id=reg-username"
@@ -92,8 +92,6 @@ herbivore_tour_with_feeding_option = "Herbivore Tour with Feeding"
 
 submit_safari_button = 'xpath=//*[@id="safari-form"]/button'
 #endregion
-
-
 
 # Checkout page
 
