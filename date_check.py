@@ -1,4 +1,5 @@
 import locale
+import locale
 from datetime import date, timedelta
 
 # Disclaimer, these have been prompted using Copilot AI.
@@ -9,7 +10,7 @@ def get_date_format():
     """
     loc = locale.getdefaultlocale()[0]
     if loc == 'sv_SE':
-        return "%Y-%m-%d"  # Swedish format
+        return "00%Y-%m-%d"  # Swedish format
     else:
         return "%m/%d/%Y"  # Default to US format
 

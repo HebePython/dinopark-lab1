@@ -8,14 +8,6 @@ Variables    variables.py
 # ------------------------
 # Open Browser
 # ------------------------
-Open Browser To Incognito Page
-    [Tags]    Henrik Bergman
-    [Arguments]    ${url}    ${browser}    ${title}
-    Open Browser    ${url}    ${browser}    options=add_argument("--incognito")
-    Maximize Browser Window
-    Title Should Be    ${title}
-    Sleep    3s
-
 Open Browser To Page
     [Tags]    Henrik Bergman
     [Arguments]    ${url}    ${browser}    ${title}
@@ -30,26 +22,11 @@ Open Browser To Page
 Register New User
     [Tags]   Sjubaib Rifai
     [Arguments]    ${username}    ${password}
-    Click Navigation Element   ${register_navigation_Element}
-    Type Text  ${username_input_id}    ${username}
-    Type Text   ${password_input_id}    ${password}
-    Click Submit Button    ${register_button}
-
-Type Text
-    [Tags]   Sjubaib Rifai
-    [Arguments]    ${element}    ${text}
-    Input Text    ${element}    ${text}
-
-Click Submit Button
-   [Tags]   Sjubaib Rifai
-   [Arguments]  ${Submit_Button_to_click}  
-   Click Button   ${Submit_Button_to_click}
-
-Click Navigation Element
-   [Tags]   Sjubaib Rifai
-   [Arguments]   ${Element_to_click}
-   Click Element   ${Element_to_click}
-   
+    Click Link   ${register_navigation_Element}
+    Input Text  ${username_input_id}    ${username}
+    Input Text   ${password_input_id}    ${password}
+    Click Button    ${register_button}
+    
 Message visibility and validation
    [Tags]   Sjubaib Rifai
    [Arguments]    ${message_Element}    ${messageText}    ${timeout}
@@ -59,7 +36,6 @@ Message visibility and validation
 User Is Registered And Logged In    
     [Tags]   Henrik Bergman, Sjubaib Rifai
     [Arguments]    ${valid_username}    ${valid_password}    ${username_element}    ${password_element}    ${login_button}    ${home_page_section}
-    Open Browser To Page    ${url}    ${browser}    ${title}  
     Register New User   ${valid_username}   ${valid_password}
     Open Login Section   ${login_header_button}    ${login_section}
     Valid Login    ${valid_username}    ${valid_password}    ${username_element}    ${password_element}    ${login_button}    ${home_page_section}
@@ -82,11 +58,9 @@ Choose Type, Category and Quantity
 
 Click Add To Cart
     [Tags]    Abdirahman Bayle
-
     [Arguments]    ${add_cart} 
     Click Button    ${add_cart}
     Alert Text Should Be    Item added to cart!
-
     
 Regular Adult Ticket Is In Cart
     [Tags]    Henrik Bergman
@@ -170,6 +144,36 @@ Checkout Should Be Successful
     Element Text Should Be    ${checkout_total_cost_element}    ${total_value_cost}
     Click Button    ${checkout_submit_button}
     Handle Alert
+
+
+User Sees Price
+    [Tags]      Abdirahman Bayle
+    [Arguments]    ${checkout_page_section}    ${checkout_total_cost_element}    ${total_value_cost}
+    Wait Until Element Is Visible    ${checkout_page_section}
+    Element Text Should Be    ${checkout_total_cost_element}    ${total_value_cost}
+    
+
+User Clicks Cart
+    [Tags]     Abdirahman Bayle
+    [Arguments]   ${checkout_header_link}
+    Click Link    ${checkout_header_link}
+
+
+
+
+User Sees Price
+    [Tags]      Abdirahman Bayle
+    [Arguments]    ${checkout_page_section}    ${checkout_total_cost_element}    ${total_value_cost}
+    Wait Until Element Is Visible    ${checkout_page_section}
+    Element Text Should Be    ${checkout_total_cost_element}    ${total_value_cost}
+    
+
+User Clicks Cart
+    [Tags]     Abdirahman Bayle
+    [Arguments]   ${checkout_header_link}
+    Click Link    ${checkout_header_link}
+
+
 
 
 # ------------------------
