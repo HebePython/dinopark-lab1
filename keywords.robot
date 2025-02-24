@@ -196,12 +196,14 @@ I Can Add Adult, Senior And Child Regular Tickets To Cart As Both VIP And Regula
 
 I Cannot Buy Zero Or Negative Amount Of Tickets
     [Tags]    Henrik Bergman VG
-    [Arguments]    ${ticket_input_list}    ${ticket_quantity_text_field}    ${add_cart_button_HB}
+    [Arguments]    ${ticket_input_list}    ${ticket_quantity_text_field}    ${add_cart_button_HB}    ${checkout_total_cost_element}
     FOR    ${quantity_input}    IN    ${ticket_input_list}
         Clear Element Text    ${ticket_quantity_text_field}
         Input Text    ${ticket_quantity_text_field}    ${quantity_input}
         Click Button    ${add_cart_button_HB}
-
+        Cart Page Is Open    ${cart_navigation_link}    ${cart_section_element}
+        Total Cost Should Be Zero    ${checkout_total_cost_element}    Total: $0
+  
     END
 
 Cart Page Is Open
@@ -209,3 +211,10 @@ Cart Page Is Open
     [Arguments]     ${cart_navigation_link}    ${cart_section_element}
     Click Link    ${cart_navigation_link}
     Element Should Be Visible    ${cart_section_element}
+
+
+Total Cost Should Be Zero
+    [Tags]    Henrik Bergman VG
+    [Arguments]    ${checkout_total_cost_element}    ${amount_text}
+    Element Text Should Be    ${checkout_total_cost_element}    ${amount_text}
+    
