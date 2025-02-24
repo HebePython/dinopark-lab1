@@ -159,8 +159,3 @@ User Clicks Cart
     Click Link    ${checkout_header_link}
 
 
-
-# ------------------------
-# Handle Alerts 
-# ------------------------
-    
