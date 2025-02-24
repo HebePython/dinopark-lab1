@@ -118,3 +118,9 @@ checkout_submit_button = "id=checkout-button"
 
 checkout_item_list = "id=cart-details"
 
+
+
+# Henrik VG Variabler  -----------------
+
+checkout_cart_list_element = "id=cart-details"
+

@@ -176,3 +176,8 @@ Checkout Should Be Successful
 # Henrik VG Del
 # ------------------------
 
+Alert Text Should Contain
+    [Tags]    Henrik Bergman
+    [Arguments]    ${expected_alert_text}
+    ${alert_text}=     Handle Alert
+    Should Contain    ${alert_text}    ${expected_alert_text}
