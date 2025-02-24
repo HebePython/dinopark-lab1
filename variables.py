@@ -122,6 +122,12 @@ checkout_item_list = "id=cart-details"
 
 # Henrik VG Variabler  -----------------
 
+
+# Checkout & Cart
+
+cart_navigation_link = 'xpath=/html/body/header/div/nav/ul/li[6]/a'
+cart_section_element = "id=cart-section"
+
 checkout_cart_list_element = "id=cart-details"
 
 #Tickets
@@ -132,3 +138,9 @@ ticket_type_list_element_HB = "id=ticket-type"
 ticket_category_list_element_HB = "id=ticket-category"
 add_cart_button_HB = "xpath=/html/body/main/article[4]/section/form/button"
 ticket_page_section = "id=ticket-form"
+ticket_navigation_link = 'xpath=/html/body/header/div/nav/ul/li[4]/a'
+
+ticket_quantity_text_field = "id=ticket-quantity"
+ticket_input_list = ["0", "-200", "-1", "-10000000"]
+
+# 

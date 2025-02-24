@@ -181,6 +181,11 @@ Alert Text Should Contain
     ${alert_text}=     Handle Alert
     Should Contain    ${alert_text}    ${expected_alert_text}
 
+Ticket Page Is Open
+    [Tags]    Henrik Bergman VG
+    [Arguments]    ${ticket_navigation_link}    ${ticket_page_section}   
+    Click Link    ${ticket_navigation_link}
+    Element Should Be Visible    ${ticket_page_section}   
 
 Select A Ticket
     [Tags]    Henrik Bergman VG
@@ -191,24 +196,29 @@ Select A Ticket
     Alert Text Should Contain    Item added
 
 
-Ticket Page Is Open
-    [Tags]    Henrik Bergman VG
-    [Arguments]     
-
-
-
-
-Verify All Ticket Combinations Can Be Added To Cart
+I Can Add Adult, Senior And Child Regular Tickets To Cart As Both VIP And Regular
     [Tags]    Henrik Bergman VG
     [Documentation]    Verify that all combinations of ticket types and categories can be added to the cart.
-    [Arguments]    ${url}    ${browser}    ${title}     ${ticket_type_HB}    ${ticket_category_HB}    ${ticket_type_list_element_HB}    ${ticket_category_list_element_HB}    ${add_cart_button_HB}
-    FOR    ${ticket_type}    IN    @{ticket_type_HB}
-    User Is Registered And Logged In      ${valid_username}    ${valid_password}    ${username_element}    ${password_element}    ${login_button}    ${home_page_section}
-    Ticket Page Is Open    
-        FOR    ${ticket_category}    IN    @{ticket_category_HB}
+    [Arguments]    ${ticket_type_HB}    ${ticket_category_HB}    ${ticket_type_list_element_HB}    ${ticket_category_list_element_HB}    ${add_cart_button_HB} 
+    FOR    ${tick_type}    IN    @{ticket_type_HB}
+        FOR    ${tick_category}    IN    @{ticket_category_HB}
             Log    Adding ticket combination: ${ticket_type_HB} and ${ticket_category_HB}
-            Choose Type, Category and Quantity    ${ticket_type_HB}    ${type_category}    ${quantity}    1    ${ticket_type}    ${ticket_category}
-            Click Add To Cart    ${add_cart_button_HB}
-            Alert Text Should Contain   Item added
+            Select A Ticket     ${tick_type}    ${tick_category}    ${ticket_type_list_element_HB}    ${ticket_category_list_element_HB}    ${add_cart_button_HB}
         END
+    END  
+
+I Cannot Buy Zero Or Negative Amount Of Tickets
+    [Tags]    Henrik Bergman VG
+    [Arguments]    ${ticket_input_list}    ${ticket_quantity_text_field}    ${add_cart_button_HB}
+    FOR    ${quantity_input}    IN    ${ticket_input_list}
+        Clear Element Text    ${ticket_quantity_text_field}
+        Input Text    ${ticket_quantity_text_field}    ${quantity_input}
+        Click Button    ${add_cart_button_HB}
+
     END
+
+Cart Page Is Open
+    [Tags]    Henrik Bergman VG
+    [Arguments]     ${cart_navigation_link}    ${cart_section_element}
+    Click Link    ${cart_navigation_link}
+    Element Should Be Visible    ${cart_section_element}
