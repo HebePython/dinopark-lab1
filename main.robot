@@ -66,20 +66,9 @@ Valid Buy Ticket Test
 
 
 
-
-Buy Ticket
-    [Tags]    Abdirahman Bayle
-    Open Browser To Page    ${url}    ${browser}    ${title}
-    Navigate TO Buy Tickets Page    ${buy_tickets}    ${tickets_page}   
-    Choose Type, Category and Quantity   ${type_age}   ${type_category}    ${quantity}    5    Child    VIP
-    Click Add To Cart    ${add_cart}    ${page_contains}
-
-
-
-
 Check Ticket Price
     [Tags]    Abdirahman Bayle
     Given User Is Registered And Logged In     ${valid_username}    ${valid_password}    ${username_element}    ${password_element}    ${login_button}    ${home_page_section}
     And Regular Adult Ticket Is In Cart    ${buy_tickets}    ${tickets_page}    ${type_age}    ${type_category}    ${quantity}    ${add_cart}    ${page_contains}
     When User Clicks Cart    ${checkout_header_link}
-    Then User Sees Price    ${checkout_page_section}    ${checkout_total_cost_element}    ${total_value_cost}
+    Then User Sees Price    ${checkout_page_section}    ${checkout_total_cost_element}    Total: $50
