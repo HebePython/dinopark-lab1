@@ -170,3 +170,34 @@ Checkout Should Be Successful
     Element Text Should Be    ${checkout_total_cost_element}    ${total_value_cost}
     Click Button    ${checkout_submit_button}
     Handle Alert
+
+
+User Sees Price
+    [Tags]      Abdirahman Bayle
+    [Arguments]    ${checkout_page_section}    ${checkout_total_cost_element}    ${total_value_cost}
+    Wait Until Element Is Visible    ${checkout_page_section}
+    Element Text Should Be    ${checkout_total_cost_element}    ${total_value_cost}
+    
+
+User Clicks Cart
+    [Tags]     Abdirahman Bayle
+    [Arguments]   ${checkout_header_link}
+    Click Link    ${checkout_header_link}
+
+
+
+# ------------------------
+# Handle Alerts 
+# ------------------------
+Alert Text Should Be
+    [Tags]    Henrik Bergman
+    [Arguments]    ${expected_alert_text}
+    ${alert_text}=     Handle Alert
+    Should Be Equal    ${alert_text}    ${expected_alert_text}
+=======
+
+
+
+    
+    
+    
