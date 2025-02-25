@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation    Robot lab 1, Login function
+Documentation    Robot lab 1, Login function, Abdirahman Bayle, Sjubaib Rifai, Henrik Bergman
 Library    SeleniumLibrary
 
 *** Keywords ***
