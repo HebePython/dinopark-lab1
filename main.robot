@@ -2,32 +2,11 @@
 Documentation    Robot lab 1, Grupp 1.     Abdirahman Bayle, Sjubaib Rifai, Henrik Bergman
 Library    SeleniumLibrary
 Resource    keywords.robot
-Variables    variables.py
 Test Setup   Open Browser To Page   ${url}  ${browser}   ${title}
 Test Teardown    Close Browser
 
 
 *** Test Cases ***
-# ------------------------
-# Registration Tests
-# ------------------------
-Test Valid User Registration
-   [Tags]   Sjubaib Rifai
-   Register New User   ${valid_username}   ${valid_password}
-   Message visibility and validation  ${register_message}   ${registration_success_message}   10 
-
-# ------------------------
-# Login Tests
-# ------------------------
-
-Valid Registration and Login Test   
-    [Tags]    Henrik Bergman, Sjubaib Rifai
-    Register New User    ${valid_username}    ${valid_password}
-    Valid Login    ${valid_username}    ${valid_password}    ${username_element}    ${password_element}    ${login_button}    ${home_page_section}
-
-
-
-
 # ------------------------
 # Safari Booking Tests
 # ------------------------
@@ -53,33 +32,9 @@ Test Book Herbivore Safari with Feeding on Weekend
 
 
 
-# ------------------------
-# Ticket Test
-# ------------------------
-
-Valid Buy Ticket Test
-    [Tags]    Abdirahman Bayle
-    User Is Registered And Logged In     ${valid_username}    ${valid_password}    ${username_element}    ${password_element}    ${login_button}    ${home_page_section}
-    Navigate TO Buy Tickets Page    ${buy_tickets}    ${tickets_page}   
-    Choose Type, Category and Quantity    ${type_age}   ${type_category}    ${quantity}    5    Child    VIP
-    Click Add To Cart    ${add_cart}
-
-
-
-
-Buy Ticket
-    [Tags]    Abdirahman Bayle
-    Open Browser To Page    ${url}    ${browser}    ${title}
-    Navigate TO Buy Tickets Page    ${buy_tickets}    ${tickets_page}   
-    Choose Type, Category and Quantity   ${type_age}   ${type_category}    ${quantity}    5    Child    VIP
-    Click Add To Cart    ${add_cart}    ${page_contains}
-
-
-
-
 Check Ticket Price
     [Tags]    Abdirahman Bayle
     Given User Is Registered And Logged In     ${valid_username}    ${valid_password}    ${username_element}    ${password_element}    ${login_button}    ${home_page_section}
     And Regular Adult Ticket Is In Cart    ${buy_tickets}    ${tickets_page}    ${type_age}    ${type_category}    ${quantity}    ${add_cart}    ${page_contains}
     When User Clicks Cart    ${checkout_header_link}
-    Then User Sees Price    ${checkout_page_section}    ${checkout_total_cost_element}    ${total_value_cost}
+    Then User Sees Price    ${checkout_page_section}    ${checkout_total_cost_element}    Total: $50

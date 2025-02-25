@@ -159,19 +159,3 @@ User Clicks Cart
     Click Link    ${checkout_header_link}
 
 
-
-# ------------------------
-# Handle Alerts 
-# ------------------------
-Alert Text Should Be
-    [Tags]    Henrik Bergman
-    [Arguments]    ${expected_alert_text}
-    ${alert_text}=     Handle Alert
-    Should Be Equal    ${alert_text}    ${expected_alert_text}
-=======
-
-
-
-    
-    
-    
