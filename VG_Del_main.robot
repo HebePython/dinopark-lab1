@@ -8,6 +8,7 @@ Documentation
  
 Library    SeleniumLibrary
 Resource    VG_Del_keywords.robot
+Test Setup   Open Browser To Page   ${url}  ${browser}   ${title}
 Test Teardown    Close Browser
 
 
@@ -40,5 +41,5 @@ Login With Unregistered Username
     Given User is on the login page
     When User enters an unregistered username
     Then System should display an error message: "Invalid username or password."
-
+    
 

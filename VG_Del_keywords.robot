@@ -24,7 +24,6 @@ Verify Message
     Element Text Should Be    ${Message_Element}   ${Text_Message}    
 
 User is already registered with a specific username
-    Open Browser To Page   ${url}    ${browser}    ${title}
     New User Registration   ${valid_username}   ${valid_password}
     Verify Message    ${register_message_element}     ${registration_success_message}    10
 
@@ -35,7 +34,6 @@ The system should display an error message: "Username already exists. Please cho
     Verify Message    ${register_message_element}     ${error_existing_user_message}   10
 
 User is on the registration page
-    Open Browser To Page    ${url}    ${browser}    ${title}
     Click Link    ${register_link_element}
     Wait Until Element Is Visible   ${register_page_section}    10
 
@@ -61,7 +59,6 @@ System should display an error message: "Invalid username or password."
     Wait Until Keyword Succeeds    5   1    Element Should Contain    ${login_message_element}    ${error_invalid_login_message}     
 
 User is on the login page
-    Open Browser To Page    ${url}    ${browser}    ${title}
     Click Link    ${login_link_element}
     Wait Until Element Is Visible    ${login_page_section}    10
 
