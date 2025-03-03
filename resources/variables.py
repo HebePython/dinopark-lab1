@@ -3,7 +3,7 @@ from resources.util.date_check import get_weekday, get_weekend
 current_directory = os.getcwd().replace('\\', '/')
 
 #browser
-browser = "chrome"
+browser = "headlesschrome"
 
 # URL
 url = f"file:///{current_directory}/webpages/jurap.html"
