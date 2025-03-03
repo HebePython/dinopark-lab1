@@ -1,5 +1,5 @@
 import os
-from date_check import get_weekday, get_weekend
+from resources.util.date_check import get_weekday, get_weekend
 current_directory = os.getcwd().replace('\\', '/')
 
 #browser
