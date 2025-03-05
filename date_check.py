@@ -1,6 +1,10 @@
 import locale
 from datetime import date, timedelta
+<<<<<<< HEAD
 # Grupp 1, Abdirahman Bayle, Sjubaib Rifai, Henrik Bergman
+=======
+
+>>>>>>> origin/Dev_Branch
 # Disclaimer, these have been prompted using Copilot AI.
 def get_date_format():
     """
