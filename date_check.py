@@ -1,6 +1,8 @@
 import locale
 from datetime import date, timedelta
+
 # Grupp 1, Abdirahman Bayle, Sjubaib Rifai, Henrik Bergman
+
 # Disclaimer, these have been prompted using Copilot AI.
 def get_date_format():
     """

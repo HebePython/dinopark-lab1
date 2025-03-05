@@ -41,4 +41,3 @@ Test Book Herbivore Safari with Feeding on Weekend
       And User Selects Herbivore Tour with Feeding
     Then Safari Should Be Added to Cart    ${submit_safari_button}
       And Checkout Should Be Successful   ${checkout_header_link}   ${checkout_page_section}    ${checkout_total_cost_element}    Total: $500    ${checkout_submit_button}
-
