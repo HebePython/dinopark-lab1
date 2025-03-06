@@ -1,6 +1,6 @@
 import locale
 from datetime import date, timedelta
-# Disclaimer, these have been prompted using Copilot AI.
+# Disclaimer, these have been prompted using Copilot AI. EXTRA STUFF
 def get_date_format():
     """
     Determine the date format based on the system's locale.
