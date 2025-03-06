@@ -1,7 +1,7 @@
 *** Settings ***
 Documentation    Robot lab 1, keywords, Abdirahman Bayle, Sjubaib Rifai, Henrik Bergman
 Library    SeleniumLibrary
-Resource    ${EXECDIR}/login_function.robot
+Resource    login_function.robot
 Variables    ${EXECDIR}/resources/util/variables.py   
 
 *** Keywords ***
