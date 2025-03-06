@@ -1,8 +1,8 @@
 *** Settings ***
 Documentation    Robot lab 1, keywords, Abdirahman Bayle, Sjubaib Rifai, Henrik Bergman
 Library    SeleniumLibrary
-Resource    login_function.robot
-Variables    variables.py    
+Resource    ${EXECDIR}/login_function.robot
+Variables    ${EXECDIR}/resources/util/variables.py   
 
 *** Keywords ***
 # ------------------------
@@ -11,7 +11,7 @@ Variables    variables.py
 Open Browser To Page
     [Tags]    Henrik Bergman
     [Arguments]    ${url}    ${browser}    ${title}
-    Open Browser    ${url}    ${browser}
+    Open Browser    ${url}   ${browser}
     Maximize Browser Window
     Title Should Be    ${title}
     Sleep    3s
