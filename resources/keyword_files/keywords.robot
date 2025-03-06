@@ -35,7 +35,6 @@ Message visibility and validation
 
 User Is Registered And Logged In    
     [Tags]   Henrik Bergman, Sjubaib Rifai
-    [Arguments]    ${valid_username}    ${valid_password}    ${username_element}    ${password_element}    ${login_button}    ${home_page_section}
     Register New User   ${valid_username}   ${valid_password}
     Open Login Section   ${login_header_button}    ${login_section}
     Valid Login    ${valid_username}    ${valid_password}    ${username_element}    ${password_element}    ${login_button}    ${home_page_section}
@@ -68,18 +67,6 @@ Regular Adult Ticket Is In Cart
     Navigate TO Buy Tickets Page    ${buy_tickets}    ${tickets_page} 
     Choose Type, Category and Quantity    ${type_age}    ${type_category}    ${quantity}    1    Adult    Regular
     Click Add To Cart    ${add_cart} 
-
-Choose Vip Ticket and Add to Cart 
-    [Tags]    Sjubaib Rifai
-    [Arguments]    ${ticket_type}    ${quantity_num}   
-    Choose Type, Category and Quantity   ${type_age}    ${type_category}    ${quantity}    ${quantity_num}    ${ticket_type}    VIP    
-    Click Add To Cart   ${Add_cart} 
-
-User has 2 Adult and 2 Child VIP Tickets in Cart
-    [Tags]    Sjubaib Rifai
-    Navigate TO Buy Tickets Page    ${buy_tickets}    ${tickets_page}
-    Choose Vip Ticket and Add to Cart   Adult   2   
-    Choose Vip Ticket and Add to Cart   Child   2
     
 # ------------------------
 # Pick Date
@@ -90,17 +77,11 @@ Weekday Is Selected In Calender
     [Arguments]    ${weekday_user_input}    ${date_input_element}
     Input Text    ${date_input_element}    ${weekday_user_input} 
 
-User Selects a Weekend Day
-    [Tags]    Sjubaib Rifai
-    Input Text    ${date_input_element}    ${weekend_user_input} 
-    
-
 # ------------------------
 # Safari
 # ------------------------
 Safari Page Is Open
-    [Tags]    Henrik Bergman
-    [Arguments]     ${safari_header_link}    ${safari_page_section}
+    [Tags]    Henrik Bergman, Sjubaib_refactored
     Click Link    ${safari_header_link}
     Wait Until Element Is Visible    ${safari_page_section}
 
@@ -114,13 +95,8 @@ Herbivore Tour and T-Rex Rumble Safari Is Added To Cart
     Select From List By Label    ${safari_dropdown_element}    T-Rex Rumble
     Safari Should Be Added to Cart    ${submit_safari_button}
 
-User Selects Herbivore Tour with Feeding
-    [Tags]    Sjubaib Rifai
-    Select From List By Value    ${safari_dropdown_element}   ${herbivore_tour_with_feeding_option}
-
 Safari Should Be Added to Cart
-    [Tags]    Henrik Bergman
-    [Arguments]    ${submit_safari_button}
+    [Tags]    Henrik Bergman, Sjubaib_refactored
     Click Button    ${submit_safari_button}
     Alert Text Should Be    Item added to cart!
 
@@ -137,21 +113,19 @@ Alert Text Should Be
 # Checkout
 # ------------------------
 Checkout Should Be Successful
-    [Tags]    Henrik Bergman
-    [Arguments]    ${checkout_header_link}   ${checkout_page_section}    ${checkout_total_cost_element}    ${total_value_cost}    ${checkout_submit_button}
+    [Tags]    Henrik Bergman, Sjubaib_refactored
+    [Arguments]    ${total_value_cost}
     Click Link    ${checkout_header_link}   
     Wait Until Element Is Visible    ${checkout_page_section}
     Element Text Should Be    ${checkout_total_cost_element}    ${total_value_cost}
     Click Button    ${checkout_submit_button}
     Handle Alert
 
-
 User Sees Price
     [Tags]      Abdirahman Bayle
     [Arguments]    ${checkout_page_section}    ${checkout_total_cost_element}    ${total_value_cost}
     Wait Until Element Is Visible    ${checkout_page_section}
     Element Text Should Be    ${checkout_total_cost_element}    ${total_value_cost}
-    
 
 User Clicks Cart
     [Tags]     Abdirahman Bayle
