@@ -68,18 +68,6 @@ Regular Adult Ticket Is In Cart
     Navigate TO Buy Tickets Page    ${buy_tickets}    ${tickets_page} 
     Choose Type, Category and Quantity    ${type_age}    ${type_category}    ${quantity}    1    Adult    Regular
     Click Add To Cart    ${add_cart} 
-
-Choose Vip Ticket and Add to Cart 
-    [Tags]    Sjubaib Rifai
-    [Arguments]    ${ticket_type}    ${quantity_num}   
-    Choose Type, Category and Quantity   ${type_age}    ${type_category}    ${quantity}    ${quantity_num}    ${ticket_type}    VIP    
-    Click Add To Cart   ${Add_cart} 
-
-User has 2 Adult and 2 Child VIP Tickets in Cart
-    [Tags]    Sjubaib Rifai
-    Navigate TO Buy Tickets Page    ${buy_tickets}    ${tickets_page}
-    Choose Vip Ticket and Add to Cart   Adult   2   
-    Choose Vip Ticket and Add to Cart   Child   2
     
 # ------------------------
 # Pick Date
@@ -89,11 +77,6 @@ Weekday Is Selected In Calender
     [Tags]    Henrik Bergman
     [Arguments]    ${weekday_user_input}    ${date_input_element}
     Input Text    ${date_input_element}    ${weekday_user_input} 
-
-User Selects a Weekend Day
-    [Tags]    Sjubaib Rifai
-    Input Text    ${date_input_element}    ${weekend_user_input} 
-    
 
 # ------------------------
 # Safari
@@ -113,10 +96,6 @@ Herbivore Tour and T-Rex Rumble Safari Is Added To Cart
     Weekday Is Selected In Calender    ${weekday_user_input}    ${date_input_element}
     Select From List By Label    ${safari_dropdown_element}    T-Rex Rumble
     Safari Should Be Added to Cart    ${submit_safari_button}
-
-User Selects Herbivore Tour with Feeding
-    [Tags]    Sjubaib Rifai
-    Select From List By Value    ${safari_dropdown_element}   ${herbivore_tour_with_feeding_option}
 
 Safari Should Be Added to Cart
     [Tags]    Henrik Bergman
@@ -145,13 +124,11 @@ Checkout Should Be Successful
     Click Button    ${checkout_submit_button}
     Handle Alert
 
-
 User Sees Price
     [Tags]      Abdirahman Bayle
     [Arguments]    ${checkout_page_section}    ${checkout_total_cost_element}    ${total_value_cost}
     Wait Until Element Is Visible    ${checkout_page_section}
     Element Text Should Be    ${checkout_total_cost_element}    ${total_value_cost}
-    
 
 User Clicks Cart
     [Tags]     Abdirahman Bayle
