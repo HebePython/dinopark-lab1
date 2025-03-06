@@ -35,7 +35,6 @@ Message visibility and validation
 
 User Is Registered And Logged In    
     [Tags]   Henrik Bergman, Sjubaib Rifai
-    [Arguments]    ${valid_username}    ${valid_password}    ${username_element}    ${password_element}    ${login_button}    ${home_page_section}
     Register New User   ${valid_username}   ${valid_password}
     Open Login Section   ${login_header_button}    ${login_section}
     Valid Login    ${valid_username}    ${valid_password}    ${username_element}    ${password_element}    ${login_button}    ${home_page_section}
@@ -82,8 +81,7 @@ Weekday Is Selected In Calender
 # Safari
 # ------------------------
 Safari Page Is Open
-    [Tags]    Henrik Bergman
-    [Arguments]     ${safari_header_link}    ${safari_page_section}
+    [Tags]    Henrik Bergman, Sjubaib_refactored
     Click Link    ${safari_header_link}
     Wait Until Element Is Visible    ${safari_page_section}
 
@@ -98,8 +96,7 @@ Herbivore Tour and T-Rex Rumble Safari Is Added To Cart
     Safari Should Be Added to Cart    ${submit_safari_button}
 
 Safari Should Be Added to Cart
-    [Tags]    Henrik Bergman
-    [Arguments]    ${submit_safari_button}
+    [Tags]    Henrik Bergman, Sjubaib_refactored
     Click Button    ${submit_safari_button}
     Alert Text Should Be    Item added to cart!
 
@@ -116,8 +113,8 @@ Alert Text Should Be
 # Checkout
 # ------------------------
 Checkout Should Be Successful
-    [Tags]    Henrik Bergman
-    [Arguments]    ${checkout_header_link}   ${checkout_page_section}    ${checkout_total_cost_element}    ${total_value_cost}    ${checkout_submit_button}
+    [Tags]    Henrik Bergman, Sjubaib_refactored
+    [Arguments]    ${total_value_cost}
     Click Link    ${checkout_header_link}   
     Wait Until Element Is Visible    ${checkout_page_section}
     Element Text Should Be    ${checkout_total_cost_element}    ${total_value_cost}
