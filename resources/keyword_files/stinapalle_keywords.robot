@@ -9,10 +9,10 @@ Herbivore Tour and T-Rex Rumble Safari Is Added To Cart
     [Tags]    Henrik Bergman
     Weekday Is Selected In Calender    ${weekday_user_input}    ${date_input_element}
     Select From List By Label    ${safari_dropdown_element}    Herbivore Tour
-    Safari Should Be Added to Cart   ${submit_safari_button}
+    Safari Should Be Added to Cart
     Weekday Is Selected In Calender    ${weekday_user_input}    ${date_input_element}
     Select From List By Label    ${safari_dropdown_element}    T-Rex Rumble
-    Safari Should Be Added to Cart    ${submit_safari_button}
+    Safari Should Be Added to Cart
 
 Regular Adult Ticket Is In Cart
     [Tags]    Henrik Bergman

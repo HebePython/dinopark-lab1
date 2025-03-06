@@ -81,7 +81,6 @@ Safari Page Is Open
 
 Safari Should Be Added to Cart
     [Tags]    Henrik Bergman, Sjubaib_refactored
-    [Arguments]    ${submit_safari_button} 
     Click Button    ${submit_safari_button}
     Alert Text Should Be    Item added to cart!
 
