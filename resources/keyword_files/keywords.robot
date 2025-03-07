@@ -61,13 +61,6 @@ Click Add To Cart
     Click Button    ${add_cart}
     Alert Text Should Be    Item added to cart!
     
-Regular Adult Ticket Is In Cart
-    [Tags]    Henrik Bergman
-    [Arguments]    ${buy_tickets}    ${tickets_page}    ${type_age}    ${type_category}    ${quantity}    ${add_cart}    ${page_contains}
-    Navigate TO Buy Tickets Page    ${buy_tickets}    ${tickets_page} 
-    Choose Type, Category and Quantity    ${type_age}    ${type_category}    ${quantity}    1    Adult    Regular
-    Click Add To Cart    ${add_cart} 
-    
 # ------------------------
 # Pick Date
 # ------------------------
@@ -85,15 +78,6 @@ Safari Page Is Open
     Click Link    ${safari_header_link}
     Wait Until Element Is Visible    ${safari_page_section}
 
-Herbivore Tour and T-Rex Rumble Safari Is Added To Cart
-    [Tags]    Henrik Bergman
-    [Arguments]    ${safari_dropdown_element}    ${submit_safari_button}    ${weekday_user_input}    ${date_input_element}
-    Weekday Is Selected In Calender    ${weekday_user_input}    ${date_input_element}
-    Select From List By Label    ${safari_dropdown_element}    Herbivore Tour
-    Safari Should Be Added to Cart   ${submit_safari_button}
-    Weekday Is Selected In Calender    ${weekday_user_input}    ${date_input_element}
-    Select From List By Label    ${safari_dropdown_element}    T-Rex Rumble
-    Safari Should Be Added to Cart    ${submit_safari_button}
 
 Safari Should Be Added to Cart
     [Tags]    Henrik Bergman, Sjubaib_refactored
@@ -123,13 +107,11 @@ Checkout Should Be Successful
 
 User Sees Price
     [Tags]      Abdirahman Bayle
-    [Arguments]    ${checkout_page_section}    ${checkout_total_cost_element}    ${total_value_cost}
     Wait Until Element Is Visible    ${checkout_page_section}
-    Element Text Should Be    ${checkout_total_cost_element}    ${total_value_cost}
+    Element Text Should Be    ${checkout_total_cost_element}    Total: $50
 
 User Clicks Cart
     [Tags]     Abdirahman Bayle
-    [Arguments]   ${checkout_header_link}
     Click Link    ${checkout_header_link}
 
 
