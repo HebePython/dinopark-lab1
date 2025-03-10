@@ -16,7 +16,7 @@ Book Herbivore and T-rex Rumble Safari Weekday
     Then Then I Am Able To Buy Them
 
 Check Ticket Price
-    [Tags]    Abdirahman Bayle    new-feature
+    [Tags]    Abdirahman Bayle
     [Documentation]    Testar Att man kan se ticket price
     Given User Is Registered And Logged In
     And Regular Adult Ticket Is In Cart
