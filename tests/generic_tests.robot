@@ -31,7 +31,7 @@ Valid Registration and Login Test
 
 Valid Buy Ticket Test
     [Tags]    Abdirahman Bayle
-    User Is Registered And Logged In     ${valid_username}    ${valid_password}    ${username_element}    ${password_element}    ${login_button}    ${home_page_section}
+    User Is Registered And Logged In
     Navigate TO Buy Tickets Page    ${buy_tickets}    ${tickets_page}   
     Choose Type, Category and Quantity    ${type_age}   ${type_category}    ${quantity}    5    Child    VIP
     Click Add To Cart    ${add_cart}
