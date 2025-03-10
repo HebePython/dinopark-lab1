@@ -1,7 +1,7 @@
 *** Settings ***
 Documentation    Robot lab 1, Grupp 1.     Abdirahman Bayle, Sjubaib Rifai, Henrik Bergman
 Library    SeleniumLibrary
-Resource    ${EXECDIR}/resources/keyword_files/keywords.robot
+Resource    keywords.robot
 
 *** Keywords ***
 
@@ -24,5 +24,9 @@ User Selects a Weekend Day
 User Selects Herbivore Tour with Feeding
     [Tags]    Sjubaib Rifai
     Select From List By Value    ${safari_dropdown_element}   ${herbivore_tour_with_feeding_option}
+
+Order Checkout Should Be Successful
+    [Tags]    Sjubaib Rifai
+    Checkout Should Be Successful    Total: $500
 
 
