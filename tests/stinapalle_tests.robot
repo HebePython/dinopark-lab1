@@ -7,7 +7,7 @@ Test Teardown    Close Browser
 
 *** Test Cases ***
 Book Herbivore and T-rex Rumble Safari Weekday
-    [Tags]    Henrik Bergman  
+    [Tags]    new-feature
     [Documentation]    Testar Köp av 1 adult ticket och bokning av två safari turer på samma dag.
     Given User Is Registered And Logged In
     And Regular Adult Ticket Is In Cart
