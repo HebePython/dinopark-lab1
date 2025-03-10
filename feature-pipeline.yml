@@ -5,7 +5,7 @@ trigger:
       - feature_*
     exclude:
       - main
-      - develop
+      - Dev_Branch
 
 pr: none
 
