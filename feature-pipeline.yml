@@ -2,6 +2,7 @@ trigger:
   branches:
     include:
       - feature/*
+      - feature_*
     exclude:
       - main
       - develop
